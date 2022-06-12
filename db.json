@@ -1,0 +1,19 @@
+{
+  "notes": [
+    {
+      "body": "this is a header\n\none\ntwo\nthree",
+      "updated": "2022-06-12T17:26:00.901Z",
+      "id": 1
+    },
+    {
+      "body": "first line of a note is treated as the header of a note",
+      "updated": "2022-06-12T17:26:47.529Z",
+      "id": 2
+    },
+    {
+      "body": "header\n\nthis is some very long text wow",
+      "updated": "2022-06-12T17:27:03.768Z",
+      "id": 3
+    }
+  ]
+}
