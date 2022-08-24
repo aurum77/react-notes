@@ -2,37 +2,52 @@
   "notes": [
     {
       "id": 1,
-      "title": "",
+      "title": "this is a title",
       "content": "this is a note",
-      "color": "Red",
+      "color": "note--cyan",
+      "pinned": true,
+      "trashed": false,
+      "archived": false,
       "date": "Sat Aug 20 2022 15:48:06"
     },
     {
       "id": 2,
       "title": "",
       "content": "im a cat",
-      "color": "Green",
+      "color": "note--green",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
       "date": "Sat Aug 12 2022 18:48:06"
     },
     {
       "id": 3,
       "title": "",
       "content": "meow",
-      "color": "Cyan",
+      "color": "note--cyan",
+      "pinned": true,
+      "trashed": false,
+      "archived": false,
       "date": "Sat Aug 13 2022 15:45:06"
     },
     {
       "id": 4,
       "title": "",
       "content": "yellow cat",
-      "color": "Yellow",
+      "color": "note--yellow",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
       "date": "Sat Aug 14 2022 11:48:06"
     },
     {
       "id": 5,
       "title": "",
       "content": "hello from json-server",
-      "color": "Gold",
+      "color": "note--gold",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
       "date": "Sat Aug 12 2022 11:48:06"
     }
   ]
