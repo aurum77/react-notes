@@ -1,0 +1,39 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "",
+      "content": "this is a note",
+      "color": "Red",
+      "date": "Sat Aug 20 2022 15:48:06"
+    },
+    {
+      "id": 2,
+      "title": "",
+      "content": "im a cat",
+      "color": "Green",
+      "date": "Sat Aug 12 2022 18:48:06"
+    },
+    {
+      "id": 3,
+      "title": "",
+      "content": "meow",
+      "color": "Cyan",
+      "date": "Sat Aug 13 2022 15:45:06"
+    },
+    {
+      "id": 4,
+      "title": "",
+      "content": "yellow cat",
+      "color": "Yellow",
+      "date": "Sat Aug 14 2022 11:48:06"
+    },
+    {
+      "id": 5,
+      "title": "",
+      "content": "hello from json-server",
+      "color": "Gold",
+      "date": "Sat Aug 12 2022 11:48:06"
+    }
+  ]
+}
