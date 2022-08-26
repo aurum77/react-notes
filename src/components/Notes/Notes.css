@@ -1,0 +1,13 @@
+.notes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .notes {
+    flex-direction: column;
+  }
+}
