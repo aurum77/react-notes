@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import notesService from "./services/notesService";
-import { Header, Footer, Note, Flex } from "./components";
+import { Header, Footer, Note, Notes } from "./components";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -14,15 +14,15 @@ const App = () => {
   return (
     <div>
       <Header />
-      {notes.length === 0 ? (
-        <div>Loading</div>
-      ) : (
-        <Flex>
-          {notes.map((note) => (
-            <Note key={note.id} note={note} />
-          ))}
-        </Flex>
-      )}
+        {notes.length === 0 ? (
+          <div>Loading</div>
+        ) : (
+          <Notes>
+            {notes.map((note) => (
+              <Note key={note.id} note={note} />
+            ))}
+          </Notes>
+        )}
       <Footer />
     </div>
   );
