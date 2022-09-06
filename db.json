@@ -4,11 +4,12 @@
       "id": 1,
       "title": "this is a title",
       "content": "this is a note",
-      "color": "note--cyan",
+      "color": "note--turquoise",
       "pinned": true,
       "trashed": false,
       "archived": false,
-      "date": "Sat Aug 20 2022 15:48:06"
+      "created": "Sat Aug 20 2022 15:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
     },
     {
       "id": 2,
@@ -18,17 +19,19 @@
       "pinned": false,
       "trashed": false,
       "archived": false,
-      "date": "Sat Aug 12 2022 18:48:06"
+      "created": "Sat Aug 12 2022 18:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
     },
     {
       "id": 3,
       "title": "",
       "content": "meow",
-      "color": "note--cyan",
+      "color": "note--turquoise",
       "pinned": true,
       "trashed": false,
       "archived": false,
-      "date": "Sat Aug 13 2022 15:45:06"
+      "created": "Sat Aug 13 2022 15:45:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
     },
     {
       "id": 4,
@@ -38,17 +41,74 @@
       "pinned": false,
       "trashed": false,
       "archived": false,
-      "date": "Sat Aug 14 2022 11:48:06"
+      "created": "Sat Aug 14 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
     },
     {
       "id": 5,
       "title": "",
       "content": "hello from json-server",
-      "color": "note--gold",
+      "color": "note--orange",
       "pinned": false,
       "trashed": false,
       "archived": false,
-      "date": "Sat Aug 12 2022 11:48:06"
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 12 2022 11:48:06"
+    },
+    {
+      "id": 6,
+      "title": "",
+      "content": "hello from json-server",
+      "color": "note--darkblue",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
+    },
+    {
+      "id": 7,
+      "title": "",
+      "content": "meow from json-server",
+      "color": "note--turquoise",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
+    },
+    {
+      "id": 8,
+      "title": "",
+      "content": "hello from json-server",
+      "color": "",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
+    },
+    {
+      "id": 9,
+      "title": "unnecessarily long text for checking overflows",
+      "content": "Do not use the same id when lazily copying and pasting this json object",
+      "color": "note--red",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
+    },
+    {
+      "id": 10,
+      "title": "",
+      "content": "cat go meow",
+      "color": "note--turquoise",
+      "pinned": false,
+      "trashed": false,
+      "archived": false,
+      "created": "Sat Aug 12 2022 11:48:06",
+      "edited": "Sat Aug 20 2022 15:48:06"
     }
   ]
 }
