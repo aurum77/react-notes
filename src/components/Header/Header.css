@@ -5,9 +5,12 @@
   border-bottom: 1px solid #e7e7e7;
   background-color: #fbfbfb;
   position: relative;
-  left: 0;
-  top: 0;
   text-align: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
 
 .header__branding {
   height: 50px;  
