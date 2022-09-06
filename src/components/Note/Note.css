@@ -36,26 +36,40 @@
 /* } */
 
 .note--blue {
-  background-color: Blue;
-  color: White;
+  background-color: #CBF0F8;
+  border: transparent;
 }
 
-.note--cyan {
-  background-color: Cyan;
-  color: Black;
+.note--darkblue {
+  background-color: #AECBFA;
+  border: transparent;
+}
+
+.note--red {
+  background-color: #F28B82;
+  border: transparent;
+}
+.note--purple {
+  background-color: #D7AEFB;
+  border: transparent;
+}
+
+.note--turquoise {
+  background-color: #A7FFEB;
+  border: transparent;
 }
 
 .note--green {
-  background-color: Green;
-  color: White;
+  background-color: #CCFF90;
+  border: transparent;
 }
 
 .note--yellow {
-  background-color: Yellow;
-  color: Black;
+  background-color: #FFF475;
+  border: transparent;
 }
 
-.note--gold {
-  background-color: Gold;
-  color: Black;
+.note--orange {
+  background-color: #FBBC04;
+  border: transparent;
 }
