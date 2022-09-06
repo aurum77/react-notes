@@ -5,8 +5,8 @@ export const Header = () => {
     <div className="header">
       <img
         className="header__branding"
-        src="./logo512.png"
-        alt="tux gang"
+        src="./logo192.png"
+        alt="branding"
       ></img>
       <div className="header__text">react-notes</div>
     </div>
