@@ -69,7 +69,7 @@
     {
       "id": 7,
       "title": "",
-      "content": "meow from json-server",
+      "content": "wow continuous text AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
       "color": "note--turquoise",
       "pinned": false,
       "trashed": false,
@@ -80,7 +80,7 @@
     {
       "id": 8,
       "title": "",
-      "content": "hello from json-server",
+      "content": "some text shorter than 70 chars expect normal font",
       "color": "",
       "pinned": false,
       "trashed": false,
@@ -91,7 +91,7 @@
     {
       "id": 9,
       "title": "unnecessarily long text for checking overflows",
-      "content": "Do not use the same id when lazily copying and pasting this json object",
+      "content": "Do not use the same id when lazily copying and pasting this json object CLARKSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON",
       "color": "note--red",
       "pinned": false,
       "trashed": false,
@@ -102,7 +102,7 @@
     {
       "id": 10,
       "title": "",
-      "content": "cat go meow",
+      "content": "some text longer than 70 chars lalalalalalalalalalalalalalalalalalalala expect small font",
       "color": "note--turquoise",
       "pinned": false,
       "trashed": false,
