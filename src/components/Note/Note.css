@@ -2,11 +2,11 @@
   border: 1px solid #E0E0E0;
   box-sizing: border-box;
   width: 240px;
-  height: 110px;
-  margin: 10px;
+  min-height: 110px;
   border-radius: 8px;
-  overflow: hidden;
+  word-wrap: break-word;
   transition: 0.2s;
+  align-self: normal;
 }
 
 .note:hover {
@@ -26,14 +26,15 @@
   margin-top: 5px;
   margin-left: 15px;
   margin-right: 15px;
+  padding-bottom: 15px;
 }
 
-/* .note__content--small { */
-/*   font-size: .875rem; */
-/*   margin-top: 5px; */
-/*   margin-left: 15px; */
-/*   margin-right: 15px; */
-/* } */
+.note__content--small {
+  font-size: .875rem;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
 
 .note--blue {
   background-color: #CBF0F8;
