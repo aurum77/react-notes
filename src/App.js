@@ -5,7 +5,6 @@ import { Header, Footer, Note, Notes, NoteInput } from "./components";
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [noteContent, setNoteContent] = useState("");
-  const [newNote, setNewNote] = useState("");
 
   useEffect(() => {
     notesService.getAll().then((notes) => {
@@ -37,6 +36,7 @@ const App = () => {
     ];
 
     setNotes(newNotes);
+    setNoteContent("");
   };
 
   return (
