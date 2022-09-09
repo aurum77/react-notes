@@ -6,7 +6,6 @@
   border-radius: 8px;
   word-wrap: break-word;
   transition: 0.2s;
-  align-self: normal;
 }
 
 .note:hover {
