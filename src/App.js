@@ -12,7 +12,7 @@ const App = () => {
     });
   }, []);
 
-  const handleInputValueChange = (event) => {
+  const handleInputContentChange = (event) => {
     setNoteContent(event.target.value);
   };
 
@@ -43,8 +43,8 @@ const App = () => {
     <div>
       <Header />
       <NoteInput
-        inputValue={noteContent}
-        onChange={handleInputValueChange}
+        inputTitle={noteTitle}
+        inputContent={noteContent}
         onSubmit={addNote}
       />
       {notes.length === 0 ? (
