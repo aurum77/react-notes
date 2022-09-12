@@ -24,21 +24,19 @@ const App = () => {
   const addNote = (event) => {
     event.preventDefault();
     if (noteTitle || noteContent) {
-      const newNote = {
-        id: Math.floor(Math.random() * 1000),
+      const newObject = {
         title: noteTitle,
         content: noteContent,
         color: "note--yellow",
         pinned: false,
         trashed: false,
         archived: false,
-        created: new Date(),
-        edited: new Date(),
       };
 
-      const newNotes = [...notes, newNote];
+      notesService
+        .createNote(newObject)
+        .then((newNote) => setNotes(notes.concat(newNote)));
 
-      setNotes(newNotes);
       setNoteContent("");
       setNoteTitle("");
     }
