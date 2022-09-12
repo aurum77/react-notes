@@ -11,7 +11,9 @@ app.use(cors());
 morgan.token("json", (request, response) => {
   return JSON.stringify(request.body);
 });
-app.use(morgan(":method :url :status :res[content-length] - :response-time ms :json"))
+app.use(
+  morgan(":method :url :status :res[content-length] - :response-time ms :json")
+);
 
 let notes = [
   {
@@ -135,6 +137,29 @@ app.get("/", (req, res) => {
 
 app.get("/api/notes", (req, res) => {
   return res.json(notes);
+});
+
+app.post("/api/notes", (req, res) => {
+  const props = req.body;
+
+  let noteId = Math.floor(Math.random() * 100000);
+  while(notes.find((note) => note.id === noteId)) {
+    noteId = Math.floor(Math.random() * 100000);
+  }
+
+  const newNote = {
+    id: noteId,
+    title: props.title,
+    content: props.content,
+    pinned: props.pinned,
+    trashed: props.trashed,
+    archived: props.archived,
+    created: new Date(),
+    edited:  new Date()
+  }
+
+  notes.push(newNote);
+  return res.status(201).json(newNote);
 });
 
 app.listen(port, () => {

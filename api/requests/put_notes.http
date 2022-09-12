@@ -1,0 +1,13 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+  "title": "created with a put request",
+  "content": "hello express server",
+  "color": "note--turquoise",
+  "pinned": true,
+  "trashed": false,
+  "archived": false,
+  "created": "Sat Aug 20 2022 15:48:06",
+  "edited": "Sat Aug 20 2022 15:48:06"
+}
