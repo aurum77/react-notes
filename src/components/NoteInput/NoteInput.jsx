@@ -1,31 +1,77 @@
 import "./NoteInput.css";
+import "../Note/Note.css";
+import { useState, useContext } from "react";
+import { NoteInputToolbar } from "../NoteInputToolbar";
+import NoteContext from "../../contexts/NoteContext";
+import notesService from "../../services/notesService";
+import NotesContext from "../../contexts/NotesContext";
 
-export const NoteInput = ({
-  inputTitle,
-  inputContent,
-  handleInputTitleChange,
-  handleInputContentChange,
-  onSubmit,
-}) => {
+export const NoteInput = ({}) => {
+  const [collapsed, setCollapsed] = useState("");
+
+  const { notes, setNotes } = useContext(NotesContext);
+
+  const { noteContent, setNoteContent } = useContext(NoteContext);
+  const { noteTitle, setNoteTitle } = useContext(NoteContext);
+  const { noteColor, setNoteColor } = useContext(NoteContext);
+
+  const handleColorPick = () => {};
+
+  const handleInputContentChange = (event) => {
+    setNoteContent(event.target.value);
+  };
+
+  const handleInputTitleChange = (event) => {
+    setNoteTitle(event.target.value);
+  };
+
+  const addNote = (event) => {
+    event.preventDefault();
+    if (noteTitle || noteContent) {
+      const newObject = {
+        title: noteTitle,
+        content: noteContent,
+        color: noteColor,
+        pinned: false,
+        trashed: false,
+        archived: false,
+      };
+
+      notesService
+        .createNote(newObject)
+        .then((newNote) => setNotes(notes.concat(newNote)));
+
+      setNoteContent("");
+      setNoteTitle("");
+      setNoteColor("");
+    }
+  };
+
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={addNote}>
       <div className="noteInput">
-        <div className="noteInput__box">
+        <div className={`noteInput__box ${noteColor}`}>
           <input
-            className="noteInput__title"
+            className={`noteInput__title ${collapsed}`}
             type="text"
             placeholder="Title"
-            value={inputTitle}
+            value={noteTitle}
             onChange={handleInputTitleChange}
           />
           <input
             className="noteInput__content"
             type="text"
             placeholder="Take a note..."
-            value={inputContent}
+            value={noteContent}
             onChange={handleInputContentChange}
           />
-          <button className="noteInput__button">Submit</button>
+          <NoteInputToolbar
+            noteInput__button={
+              <button className={`noteInput__button ${collapsed}`}>
+                Close
+              </button>
+            }
+          ></NoteInputToolbar>
         </div>
       </div>
     </form>
