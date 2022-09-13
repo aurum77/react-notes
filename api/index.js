@@ -150,6 +150,7 @@ app.post("/api/notes", (req, res) => {
   const newNote = {
     id: noteId,
     title: props.title,
+    color: props.color,
     content: props.content,
     pinned: props.pinned,
     trashed: props.trashed,
