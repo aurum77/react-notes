@@ -1,57 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Note, Notes, NoteInput } from "../components";
-import notesService from "../services/notesService";
+import NotesContext from "../contexts/NotesContext";
 
 export const IndexPage = () => {
-  const [notes, setNotes] = useState([]);
-  const [noteContent, setNoteContent] = useState("");
-  const [noteTitle, setNoteTitle] = useState("");
+  const { notes } = useContext(NotesContext);
 
-  useEffect(() => {
-    notesService.getAll().then((notes) => {
-      setNotes(notes);
-    });
-  }, []);
-
-  const handleInputContentChange = (event) => {
-    setNoteContent(event.target.value);
-  };
-
-  const handleInputTitleChange = (event) => {
-    setNoteTitle(event.target.value);
-  };
-
-  const addNote = (event) => {
-    event.preventDefault();
-    if (noteTitle || noteContent) {
-      const newObject = {
-        title: noteTitle,
-        content: noteContent,
-        color: "note--yellow",
-        pinned: false,
-        trashed: false,
-        archived: false,
-      };
-
-      notesService
-        .createNote(newObject)
-        .then((newNote) => setNotes(notes.concat(newNote)));
-
-      setNoteContent("");
-      setNoteTitle("");
-    }
-  };
-
-
-  return(
+  return (
     <div>
-      <NoteInput
-        inputTitle={noteTitle}
-        inputContent={noteContent}
-        handleInputContentChange={handleInputContentChange}
-        handleInputTitleChange={handleInputTitleChange}
-        onSubmit={addNote}
-      />
+      <NoteInput />
       {notes.length === 0 ? (
         <div>Loading</div>
       ) : (
@@ -62,5 +18,5 @@ export const IndexPage = () => {
         </Notes>
       )}
     </div>
-  )
-}
+  );
+};
