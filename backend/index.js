@@ -143,7 +143,7 @@ app.post("/api/notes", (req, res) => {
   const props = req.body;
 
   let noteId = Math.floor(Math.random() * 100000);
-  while(notes.find((note) => note.id === noteId)) {
+  while (notes.find((note) => note.id === noteId)) {
     noteId = Math.floor(Math.random() * 100000);
   }
 
@@ -156,11 +156,17 @@ app.post("/api/notes", (req, res) => {
     trashed: props.trashed,
     archived: props.archived,
     created: new Date(),
-    edited:  new Date()
-  }
+    edited: new Date(),
+  };
 
   notes.push(newNote);
   return res.status(201).json(newNote);
+});
+
+app.delete("/api/notes/:id", (req, res) => {
+  const noteId = Number(req.params.id);
+  notes = notes.filter((note) => note.id !== noteId);
+  return res.status(200).json(notes);
 });
 
 app.listen(port, () => {
