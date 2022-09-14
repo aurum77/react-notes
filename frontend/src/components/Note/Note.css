@@ -1,13 +1,15 @@
 .note {
+  display: flex;
+  flex-direction: column;
   border: 1px solid #E0E0E0;
   box-sizing: border-box;
   width: 240px;
   padding-top: 5px;
+  padding-bottom: 5px;
   padding-left: 15px;
   padding-right: 15px;
   min-height: 110px;
   border-radius: 8px;
-  word-wrap: break-word;
   transition: 0.2s;
 }
 
@@ -18,15 +20,18 @@
 .note__title {
   font-size: 1.1rem;
   font-weight: bolder;
+  word-wrap: break-word;
 }
 
 .note__content {
   font-size: 1.0rem;
   padding-bottom: 15px;
+  word-wrap: break-word;
 }
 
 .note__content--small {
   font-size: .875rem;
+  word-wrap: break-word;
 }
 
 .note--blue {
