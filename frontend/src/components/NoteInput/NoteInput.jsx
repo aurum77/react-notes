@@ -63,13 +63,9 @@ export const NoteInput = ({}) => {
             value={noteContent}
             onChange={handleInputContentChange}
           />
-          <NoteInputToolbar
-            noteInput__button={
-              <button className={`noteInput__button ${collapsed}`}>
-                Close
-              </button>
-            }
-          ></NoteInputToolbar>
+          <NoteInputToolbar>
+            <button className={`noteInput__button ${collapsed}`}>Close</button>
+          </NoteInputToolbar>
         </div>
       </div>
     </form>
