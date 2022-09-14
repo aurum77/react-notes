@@ -26,11 +26,13 @@
 .note__content {
   font-size: 1.0rem;
   padding-bottom: 15px;
+  margin-bottom: auto;
   word-wrap: break-word;
 }
 
 .note__content--small {
   font-size: .875rem;
+  margin-bottom: auto;
   word-wrap: break-word;
 }
 

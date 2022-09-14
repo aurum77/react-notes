@@ -1,4 +1,5 @@
 import "./Note.css";
+import { NoteToolbar } from "../NoteToolbar";
 
 export const Note = ({ note }) => {
   const content =
@@ -13,6 +14,7 @@ export const Note = ({ note }) => {
     <div className={`note ${note.color}`}>
       <div className="note__title">{title}</div>
       <div className={`note__content ${contentSize}`}>{content}</div>
-      </div>
+      <NoteToolbar />
+    </div>
   );
 };

@@ -1,0 +1,21 @@
+.noteToolbar {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+}
+
+.noteToolbar__element {
+  padding: 7px;
+}
+
+.noteToolbar__element img {
+  height: 20px;
+}
+
+.noteToolbar__element:hover {
+  cursor: pointer;
+  background-color: #20210944;
+}
+
+
