@@ -63,7 +63,7 @@ let notes = [
   {
     id: 5,
     title: "",
-    content: "hello from json-server",
+    content: "hello from express",
     color: "note--orange",
     pinned: false,
     trashed: false,
@@ -74,7 +74,7 @@ let notes = [
   {
     id: 6,
     title: "",
-    content: "hello from json-server",
+    content: "hello from express",
     color: "note--darkblue",
     pinned: false,
     trashed: false,

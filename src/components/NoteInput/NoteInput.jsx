@@ -15,8 +15,6 @@ export const NoteInput = ({}) => {
   const { noteTitle, setNoteTitle } = useContext(NoteContext);
   const { noteColor, setNoteColor } = useContext(NoteContext);
 
-  const handleColorPick = () => {};
-
   const handleInputContentChange = (event) => {
     setNoteContent(event.target.value);
   };
