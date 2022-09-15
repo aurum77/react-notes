@@ -1,5 +1,4 @@
 import "./NoteInput.css";
-import "../Note/Note.css";
 import { useState, useContext } from "react";
 import { NoteInputToolbar } from "../NoteInputToolbar";
 import NoteContext from "../../contexts/NoteContext";

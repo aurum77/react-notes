@@ -1,16 +1,15 @@
-.notes {
+.center {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
-@media (max-width: 600px) {
-  .notes {
-    flex-direction: column;
-  }
+.notes {
+  display: flex;
+  width: auto;
+}
+
+.notes__column {
+  padding-left: 30px;
+  background-clip: 30px;
 }
