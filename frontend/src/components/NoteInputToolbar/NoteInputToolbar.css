@@ -3,7 +3,8 @@
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .noteInputToolbar__filler {
