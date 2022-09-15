@@ -6,3 +6,4 @@ export { NoteInput } from "./NoteInput";
 export { NoteInputToolbar } from "./NoteInputToolbar";
 export { NotFound } from "./NotFound";
 export { NoteToolbar } from "./NoteToolbar";
+export { Loading } from "./Loading";
