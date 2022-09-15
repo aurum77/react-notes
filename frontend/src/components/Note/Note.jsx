@@ -14,7 +14,7 @@ export const Note = ({ note }) => {
     <div className={`note ${note.color}`}>
       <div className="note__title">{title}</div>
       <div className={`note__content ${contentSize}`}>{content}</div>
-      <NoteToolbar />
+      <NoteToolbar id={note.id}/>
     </div>
   );
 };
