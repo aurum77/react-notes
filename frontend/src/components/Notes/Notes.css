@@ -8,8 +8,3 @@
   display: flex;
   width: auto;
 }
-
-.notes__column {
-  padding-left: 30px;
-  background-clip: 30px;
-}
