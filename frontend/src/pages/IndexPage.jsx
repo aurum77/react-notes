@@ -1,21 +1,21 @@
-import { useState, useEffect, useContext } from "react";
-import { Note, Notes, NoteInput } from "../components";
+import { useContext } from "react";
+import { Note, Notes, NoteInput, Loading } from "../components";
 import NotesContext from "../contexts/NotesContext";
 
 export const IndexPage = () => {
-  const { notes } = useContext(NotesContext);
+  const { notes, loading } = useContext(NotesContext);
 
   return (
     <div>
       <NoteInput />
-      {notes.length === 0 ? (
-        <div>Loading</div>
-      ) : (
+      {!loading ? (
         <Notes>
           {notes.map((note) => (
             <Note key={note.id} note={note} />
           ))}
         </Notes>
+      ) : (
+        <Loading />
       )}
     </div>
   );
