@@ -3,7 +3,7 @@ import { useContext } from "react";
 import notesService from "../../services/notesService";
 import NotesContext from "../../contexts/NotesContext";
 
-export const NoteToolbar = ({ id }) => {
+export const NoteToolbar = ({ id, visibility }) => {
   const { notes, setNotes } = useContext(NotesContext);
 
   const isPinned = (id) => {
@@ -29,7 +29,7 @@ export const NoteToolbar = ({ id }) => {
   }
 
   return (
-    <div className="noteToolbar">
+    <div className={`noteToolbar ${visibility ? "" : "noteToolbar--hidden"}`}>
       <div
         className={`noteToolbar__element material-symbols-outlined ${
           isPinned(id) ? "noteToolbar__element--filled" : ""

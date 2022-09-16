@@ -5,17 +5,23 @@
   gap: 5px;
 }
 
-.noteToolbar__element {
-  padding: 7px;
+.noteToolbar--hidden {
+  visibility: hidden;
+  transition: 0.2s;
 }
 
-.noteToolbar__element img {
-  height: 20px;
+.noteToolbar__element {
+  padding: 5px;
+  font-size: 1.3rem;
+}
+
+.noteToolbar__element--filled {
+  font-variation-settings:
+  'FILL' 1
 }
 
 .noteToolbar__element:hover {
   cursor: pointer;
   background-color: #20210944;
+  border-radius: 50%;
 }
-
-
