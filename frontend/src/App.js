@@ -8,16 +8,18 @@ const App = () => {
   return (
     <div>
       <Header />
-      <NotesProvider>
-        <NoteProvider>
-          <Router>
-            <Routes>
-              <Route path="*" element={<NotFoundPage />} />
-              <Route path="/" element={<IndexPage />} />
-            </Routes>
-          </Router>
-        </NoteProvider>
-      </NotesProvider>
+      <div className="maincontent">
+        <NotesProvider>
+          <NoteProvider>
+            <Router>
+              <Routes>
+                <Route path="*" element={<NotFoundPage />} />
+                <Route path="/" element={<IndexPage />} />
+              </Routes>
+            </Router>
+          </NoteProvider>
+        </NotesProvider>
+      </div>
       <Footer />
     </div>
   );

@@ -5,3 +5,12 @@
   margin: 0px;
   padding: 0px;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.maincontent {
+  flex: 1 0 auto;
+}
