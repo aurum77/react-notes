@@ -17,4 +17,9 @@ const deleteNote = (noteId) => {
   return request.then((response) => response.data);
 };
 
-export default { getAll, createNote, deleteNote };
+const patchNote = (note, noteId) => {
+  const request = axios.delete(`${BASE_URL}/api/notes/${noteId}`);
+  return request.then((response) => response.data);
+};
+
+export default { getAll, createNote, deleteNote, patchNote };
