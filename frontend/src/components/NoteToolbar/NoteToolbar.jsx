@@ -29,7 +29,7 @@ export const NoteToolbar = ({ id, visibility }) => {
   };
 
   return (
-    <div className={`noteToolbar ${visibility ? "" : "noteToolbar--hidden"}`}>
+    <div className={`noteToolbar ${visibility ? "noteToolbar--visible" : "noteToolbar--hidden"}`}>
       <div
         className={`noteToolbar__element material-symbols-outlined ${
           isPinned(id) ? "noteToolbar__element--filled" : ""

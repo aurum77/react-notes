@@ -3,16 +3,24 @@
   justify-content: left;
   align-items: center;
   gap: 5px;
+  transition: 0.1s;
 }
 
 .noteToolbar--hidden {
   visibility: hidden;
-  transition: 0.2s;
+  opacity: 0;
+}
+
+.noteToolbar--visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .noteToolbar__element {
   padding: 5px;
   font-size: 1.3rem;
+  border-radius: 50%;
+  transition: 0.1s;
 }
 
 .noteToolbar__element--filled {
