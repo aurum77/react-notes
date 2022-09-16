@@ -14,11 +14,37 @@ export const NoteToolbar = ({ id }) => {
 
   return (
     <div className="noteToolbar">
-      <div className="noteToolbar__element" onClick={handleNoteDeleteAction}>
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
-          alt="delete a note"
-        />
+      <div
+        className={`noteToolbar__element material-symbols-outlined ${
+          isPinned(id) ? "noteToolbar__element--filled" : ""
+        }`}
+        onClick={handleNoteTogglePinAction}
+      >
+        push_pin
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteTogglePinAction}
+      >
+        palette
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteDeleteAction}
+      >
+        add_photo_alternate
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteDeleteAction}
+      >
+        archive
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteDeleteAction}
+      >
+        more_vert
       </div>
     </div>
   );
