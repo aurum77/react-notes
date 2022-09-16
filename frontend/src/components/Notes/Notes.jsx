@@ -1,22 +1,19 @@
 import "./Notes.css";
-import Masonry from "react-masonry-css";
 
 export const Notes = ({ children }) => {
-  const breakpointColumnsObj = {
-    default: 7,
-    1800: 6,
-    1500: 5,
-    1300: 4,
-    1050: 3,
-    800: 2,
-    500: 1,
-  };
+  const notes = children.filter((child) => child.props.note.pinned !== true);
+  const pinned = children.filter((child) => child.props.note.pinned === true);
 
   return (
-    <div className="center">
-      <Masonry className="notes" breakpointCols={breakpointColumnsObj}>
-        {children.length !== 0 ? children : "You don't have any notes"}
-      </Masonry>
+    <div >
+      <div className="notes__header">PINNED</div>
+    <div className="notes__container">
+      {pinned.length !== 0 ? pinned : ""}
+    </div>
+      <div className="notes__header">NOTES</div>
+    <div className="notes__container">
+      {notes.length !== 0 ? notes : ""}
+    </div>
     </div>
   );
 };
