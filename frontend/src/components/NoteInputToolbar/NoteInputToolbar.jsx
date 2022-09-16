@@ -12,35 +12,35 @@ export const NoteInputToolbar = ({ children }) => {
   return (
     <div className="noteInputToolbar">
       <span
-        className={`noteInputToolbar__dot ${
+        className={`noteInputToolbar__dot material-symbols-outlined ${
           noteColor === "" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color=""
         onClick={handleColorPick}
       ></span>
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--blue ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--blue ${
           noteColor === "note--blue" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--blue"
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--red ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--red ${
           noteColor === "note--red" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--red"
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--purple ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--purple ${
           noteColor === "note--purple" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--purple"
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--turquoise ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--turquoise ${
           noteColor === "note--turquoise"
             ? "noteInputToolbar__dot--selected"
             : ""
@@ -49,21 +49,21 @@ export const NoteInputToolbar = ({ children }) => {
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--green ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--green ${
           noteColor === "note--green" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--green"
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--yellow ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--yellow ${
           noteColor === "note--yellow" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--yellow"
         onClick={handleColorPick}
       />
       <span
-        className={`noteInputToolbar__dot noteInputToolbar__dot--orange ${
+        className={`noteInputToolbar__dot material-symbols-outlined noteInputToolbar__dot--orange ${
           noteColor === "note--orange" ? "noteInputToolbar__dot--selected" : ""
         }`}
         color="note--orange"
