@@ -19,14 +19,14 @@ export const NoteToolbar = ({ id, visibility }) => {
 
   const handleNoteTogglePinAction = () => {
     const filteredNote = notes.filter((note) => note.id === id)[0];
-    filteredNote.pinned = !filteredNote.pinned
+    filteredNote.pinned = !filteredNote.pinned;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
-    notesService.patchNote(filteredNote).then()
+    notesService.patchNote(filteredNote).then();
 
-    setNotes([...newNotes, filteredNote])
-  }
+    setNotes([...newNotes, filteredNote]);
+  };
 
   return (
     <div className={`noteToolbar ${visibility ? "" : "noteToolbar--hidden"}`}>

@@ -43,7 +43,7 @@ let notes = [
     title: "",
     content: "meow",
     color: "note--turquoise",
-    pinned: true,
+    pinned: false,
     trashed: false,
     archived: false,
     created: "Sat Aug 13 2022 15:45:06",
@@ -65,7 +65,7 @@ let notes = [
     title: "",
     content: "hello from express",
     color: "note--orange",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -76,7 +76,7 @@ let notes = [
     title: "",
     content: "hello from express",
     color: "note--darkblue",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -88,7 +88,7 @@ let notes = [
     content:
       "wow continuous text AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
     color: "note--turquoise",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -99,7 +99,7 @@ let notes = [
     title: "",
     content: "some text shorter than 70 chars expect normal font",
     color: "",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -111,7 +111,7 @@ let notes = [
     content:
       "Do not use the same id when lazily copying and pasting this json object CLARKSOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOON",
     color: "note--red",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -123,7 +123,7 @@ let notes = [
     content:
       "some text longer than 70 chars lalalalalalalalalalalalalalalalalalalala expect small font",
     color: "note--turquoise",
-    pinned: false,
+    pinned: true,
     trashed: false,
     archived: false,
     created: "Sat Aug 12 2022 11:48:06",
@@ -168,6 +168,15 @@ app.delete("/api/notes/:id", (req, res) => {
   notes = notes.filter((note) => note.id !== noteId);
   return res.status(200).json(notes);
 });
+
+app.patch("/api/notes/:id", (req, res) => {
+  const noteId = Number(req.params.id);
+  const newNote = 
+  notes = [
+    ...notes,
+
+  ]
+})
 
 app.listen(port, () => {
   console.log(`Express app running on port ${port}`);

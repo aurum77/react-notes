@@ -14,10 +14,14 @@ export const Note = ({ note }) => {
 
   const handleToolbarVisibility = () => {
     setToolbarVisibility(!toolbarVisibility);
-  }
+  };
 
   return (
-    <div className={`note ${note.color}`} onMouseEnter={handleToolbarVisibility} onMouseLeave={handleToolbarVisibility}>
+    <div
+      className={`note ${note.color}`}
+      onMouseEnter={handleToolbarVisibility}
+      onMouseLeave={handleToolbarVisibility}
+    >
       <div className="note__title">{title}</div>
       <div className={`note__content ${contentSize}`}>{content}</div>
       <NoteToolbar id={note.id} visibility={toolbarVisibility} />

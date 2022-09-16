@@ -1,9 +1,5 @@
 import "./Loading.css";
 
 export const Loading = () => {
-  return(
-    <div className="loading">
-      Loading Notes
-    </div>
-  )
-}
+  return <div className="loading">Loading Notes</div>;
+};
