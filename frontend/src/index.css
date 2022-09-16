@@ -6,11 +6,11 @@
   padding: 0px;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+.pagecontainer {
+  position: relative;
+  min-height: 100vh;
 }
 
-.maincontent {
-  flex: 1 0 auto;
+.contentwrap {
+  padding-bottom: 2.5rem
 }
