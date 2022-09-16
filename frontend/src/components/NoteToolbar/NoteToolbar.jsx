@@ -4,13 +4,29 @@ import notesService from "../../services/notesService";
 import NotesContext from "../../contexts/NotesContext";
 
 export const NoteToolbar = ({ id }) => {
-  const { setNotes } = useContext(NotesContext);
+  const { notes, setNotes } = useContext(NotesContext);
+
+  const isPinned = (id) => {
+    const filteredNote = notes.filter((note) => note.id === id)[0];
+    return filteredNote.pinned;
+  };
 
   const handleNoteDeleteAction = () => {
     notesService.deleteNote(id).then((notes) => {
       setNotes(notes);
     });
   };
+
+  const handleNoteTogglePinAction = () => {
+    const filteredNote = notes.filter((note) => note.id === id)[0];
+    filteredNote.pinned = !filteredNote.pinned
+
+    const newNotes = notes.filter((note) => note.id !== id);
+
+    notesService.patchNote(filteredNote).then()
+
+    setNotes([...newNotes, filteredNote])
+  }
 
   return (
     <div className="noteToolbar">
