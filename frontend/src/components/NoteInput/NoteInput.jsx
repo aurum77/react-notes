@@ -2,7 +2,7 @@ import "./NoteInput.css";
 import { useState, useContext } from "react";
 import { NoteInputToolbar } from "../NoteInputToolbar";
 import NotesContext from "../../contexts/NotesContext";
-import NoteContext from "../../contexts/NoteContext";
+import NoteInputContext from "../../contexts/NoteInputContext";
 import notesService from "../../services/notesService";
 
 export const NoteInput = ({}) => {
@@ -10,9 +10,14 @@ export const NoteInput = ({}) => {
 
   const { notes, setNotes } = useContext(NotesContext);
 
-  const { noteContent, setNoteContent } = useContext(NoteContext);
-  const { noteTitle, setNoteTitle } = useContext(NoteContext);
-  const { noteColor, setNoteColor } = useContext(NoteContext);
+  const {
+    noteContent,
+    setNoteContent,
+    noteTitle,
+    setNoteTitle,
+    noteColor,
+    setNoteColor,
+  } = useContext(NoteInputContext);
 
   const handleInputContentChange = (event) => {
     setNoteContent(event.target.value);

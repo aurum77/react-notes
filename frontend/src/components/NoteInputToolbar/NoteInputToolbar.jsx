@@ -1,9 +1,9 @@
 import "./NoteInputToolbar.css";
 import { useContext } from "react";
-import NoteContext from "../../contexts/NoteContext";
+import NoteInputContext from "../../contexts/NoteInputContext";
 
 export const NoteInputToolbar = ({ children }) => {
-  const { noteColor, setNoteColor } = useContext(NoteContext);
+  const { noteColor, setNoteColor } = useContext(NoteInputContext);
 
   const handleColorPick = (event) => {
     setNoteColor(event.target.getAttribute("color"));
