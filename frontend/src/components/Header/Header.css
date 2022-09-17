@@ -20,7 +20,8 @@
 .header__text {
   font-size: 1.2rem;
   flex-shrink: 0;
-  margin-right: 80px;
+  margin-right: 70px;
+  color: black;
 }
 
 .header__item {
