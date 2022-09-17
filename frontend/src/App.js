@@ -7,20 +7,23 @@ import { NotesProvider } from "./contexts/NotesContext";
 const App = () => {
   return (
     <div>
-      <Header />
-      <div className="maincontent">
-        <NotesProvider>
-          <NoteProvider>
-            <Router>
-              <Routes>
-                <Route path="*" element={<NotFoundPage />} />
-                <Route path="/" element={<IndexPage />} />
-              </Routes>
-            </Router>
-          </NoteProvider>
-        </NotesProvider>
+      <div className="pagecontainer">
+        <div className="contentwrap">
+          <Router>
+            <Header />
+            <NotesProvider>
+              <NoteProvider>
+                <Routes>
+                  <Route path="*" element={<NotFoundPage />} />
+                  <Route path="/404" element={<NotFoundPage />} />
+                  <Route path="/" element={<IndexPage />} />
+                </Routes>
+              </NoteProvider>
+            </NotesProvider>
+            <Footer />
+          </Router>
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };

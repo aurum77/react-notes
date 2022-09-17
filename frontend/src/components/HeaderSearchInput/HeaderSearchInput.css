@@ -1,0 +1,48 @@
+.noteSearchInput {
+  display: flex;
+}
+
+.noteSearchInput__icon {
+  margin-right: 4px;
+}
+
+.noteSearchInput__icon:hover {
+  cursor: pointer;
+  padding: 2px;
+  background-color: #20210944;
+  border-radius: 50%;
+}
+
+
+.noteSearchInput__box {
+  display: flex;
+  color: black;
+  max-width: 450px;
+  font-size: 0.95rem;
+  color: #888;
+  background-color: #eee;
+  align-items: center;
+  justify-content: left;
+  gap: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 8px;
+  cursor: text;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.noteSearchInput__search {
+  width: 100%;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.noteSearchInput__search:focus {
+  outline: none;
+}
+
+.noteSearchInput__button {
+}
