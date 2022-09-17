@@ -1,9 +1,9 @@
 import "./NoteInput.css";
 import { useState, useContext } from "react";
 import { NoteInputToolbar } from "../NoteInputToolbar";
+import NotesContext from "../../contexts/NotesContext";
 import NoteContext from "../../contexts/NoteContext";
 import notesService from "../../services/notesService";
-import NotesContext from "../../contexts/NotesContext";
 
 export const NoteInput = ({}) => {
   const [collapsed, setCollapsed] = useState("");
