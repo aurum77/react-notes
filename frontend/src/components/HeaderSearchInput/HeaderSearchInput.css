@@ -3,12 +3,12 @@
 }
 
 .noteSearchInput__icon {
+  padding: 2px;
   margin-right: 4px;
 }
 
 .noteSearchInput__icon:hover {
   cursor: pointer;
-  padding: 2px;
   background-color: #20210944;
   border-radius: 50%;
 }
