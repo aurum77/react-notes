@@ -5,8 +5,8 @@ import NotesContext from "../../contexts/NotesContext";
 import NoteInputContext from "../../contexts/NoteInputContext";
 import notesService from "../../services/notesService";
 
-export const NoteInput = ({}) => {
-  const [collapsed, setCollapsed] = useState("");
+export const NoteInput = () => {
+  const [hidden, sethidden] = useState("");
 
   const { notes, setNotes } = useContext(NotesContext);
 
@@ -54,7 +54,7 @@ export const NoteInput = ({}) => {
       <div className="noteInput">
         <div className={`noteInput__box ${noteColor}`}>
           <input
-            className={`noteInput__title ${collapsed}`}
+            className={`noteInput__title ${hidden}`}
             type="text"
             placeholder="Title"
             value={noteTitle}
@@ -68,7 +68,7 @@ export const NoteInput = ({}) => {
             onChange={handleInputContentChange}
           />
           <NoteInputToolbar>
-            <button className={`noteInput__button ${collapsed}`}>Close</button>
+            <button className={`noteInput__button ${hidden}`}>Close</button>
           </NoteInputToolbar>
         </div>
       </div>
