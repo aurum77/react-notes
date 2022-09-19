@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content: space-between;
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -16,55 +15,4 @@
   height: 25px;
   width: 25px;
   border-radius: 50%;
-}
-
-.noteInputToolbar__dot {
-  height: 25px;
-  width: 25px;
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px solid #999;
-  box-sizing: border-box;
-  display: inline-block;
-}
-
-.noteInputToolbar__dot--selected:before {
-  content: "check";
-  margin-left: 1px;
-  font-size: 1.4rem;
-}
-
-.noteInputToolbar__dot--blue {
-  background-color: #cbf0f8;
-}
-
-.noteInputToolbar__dot--blue {
-  background-color: #cbf0f8;
-}
-
-.noteInputToolbar__dot--darkblue {
-  background-color: #aecbfa;
-}
-
-.noteInputToolbar__dot--red {
-  background-color: #f28b82;
-}
-.noteInputToolbar__dot--purple {
-  background-color: #d7aefb;
-}
-
-.noteInputToolbar__dot--turquoise {
-  background-color: #a7ffeb;
-}
-
-.noteInputToolbar__dot--green {
-  background-color: #ccff90;
-}
-
-.noteInputToolbar__dot--yellow {
-  background-color: #fff475;
-}
-
-.noteInputToolbar__dot--orange {
-  background-color: #fbbc04;
 }
