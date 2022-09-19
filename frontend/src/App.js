@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "./components";
 import { IndexPage, NotFoundPage } from "./pages";
-import { NoteProvider } from "./contexts/NoteContext";
+import { NoteInputProvider } from "./contexts/NoteInputContext";
 import { NotesProvider } from "./contexts/NotesContext";
 
 const App = () => {
