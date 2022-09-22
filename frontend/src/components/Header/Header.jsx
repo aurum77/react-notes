@@ -13,9 +13,7 @@ export const Header = () => {
         <div className="header__text">react-notes</div>
       </Link>
       <div className="header__item--fill">
-        <Link to="/search" style={{ textDecoration: "none" }}>
           <HeaderSearchInput />
-        </Link>
       </div>
     </div>
   );
