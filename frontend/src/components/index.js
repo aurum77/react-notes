@@ -1,6 +1,6 @@
 export { Footer } from "./Footer";
 export { Header } from "./Header";
-export { HeaderSearchInput } from "./HeaderSearchInput";
+export { HeaderSearch } from "./HeaderSearch";
 export { Note } from "./Note";
 export { Notes } from "./Notes";
 export { NoteInput } from "./NoteInput";

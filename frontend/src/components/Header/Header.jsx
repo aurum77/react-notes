@@ -1,5 +1,5 @@
 import "./Header.css";
-import { HeaderSearchInput } from "../HeaderSearchInput";
+import { HeaderSearch } from "../HeaderSearch";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
@@ -13,7 +13,7 @@ export const Header = () => {
         <div className="header__text">react-notes</div>
       </Link>
       <div className="header__item--fill">
-          <HeaderSearchInput />
+          <HeaderSearch />
       </div>
     </div>
   );

@@ -1,1 +1,0 @@
-export { HeaderSearchInput } from "./HeaderSearchInput";

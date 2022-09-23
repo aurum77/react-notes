@@ -1,13 +1,13 @@
-import "./HeaderSearchInput.css";
+import "./HeaderSearch.css";
 import { useState, useContext } from "react";
 import SearchContext from "../../contexts/SearchContext";
 
-export const HeaderSearchInput = () => {
+export const HeaderSearch = () => {
   const [focused, setFocused] = useState(false);
   const { searchValue, setSearchValue } = useContext(SearchContext);
 
   const handleSearchBoxFocus = () => {
-    setFocused(!focused);
+    setFocused((focused) => !focused);
   };
 
   const handleSearchValue = (event) => {
@@ -15,17 +15,17 @@ export const HeaderSearchInput = () => {
   };
 
   return (
-    <div className="noteSearchInput">
+    <div className="headerSearch">
       <div
-        className={`noteSearchInput__box ${
-          focused ? "noteSearchInput__box--focused" : ""
+        className={`headerSearch__box ${
+          focused ? "headerSearch__box--focused" : ""
         }`}
       >
-        <div className="noteSearchInput__icon material-symbols-outlined">
+        <div className="headerSearch__icon material-symbols-outlined">
           search
         </div>
         <input
-          className="noteSearchInput__search"
+          className="headerSearch__input"
           placeholder="Search for notes"
           onFocus={handleSearchBoxFocus}
           onBlur={handleSearchBoxFocus}
