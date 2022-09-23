@@ -20,26 +20,37 @@
 .header__text {
   font-size: 1.2rem;
   flex-shrink: 0;
-  margin-right: 70px;
   color: black;
 }
 
 .header__item {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .header__item--fill {
   font-size: 1.2rem;
+  margin-left: 30px;
   flex: 1;
 }
 
-.header__hamburger {
+.header__leftmost {
   margin-left: 10px;
   padding: 5px;
 }
 
-.header__hamburger:hover {
+.header__leftmost:hover {
   border-radius: 50%;
   background-color: #20210944;
   cursor: pointer;
+}
+
+.header__rightmost {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.header__usericon {
+  border: 1px solid #ececec;
+  border-radius: 50%;
+  width: 30px;
 }
