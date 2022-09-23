@@ -25,6 +25,8 @@
 
 .header__item {
   font-size: 1.4rem;
+  color: #555;
+  padding: 5px;
 }
 
 .header__item--fill {
@@ -33,18 +35,17 @@
   flex: 1;
 }
 
-.header__leftmost {
+.header__item--leftmost {
   margin-left: 10px;
-  padding: 5px;
 }
 
-.header__leftmost:hover {
+.header__item:hover {
   border-radius: 50%;
   background-color: #20210944;
   cursor: pointer;
 }
 
-.header__rightmost {
+.header__item--rightmost {
   margin-right: 10px;
   padding: 5px;
 }
