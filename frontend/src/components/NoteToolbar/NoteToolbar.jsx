@@ -42,6 +42,12 @@ export const NoteToolbar = ({ id, visibility }) => {
         className="noteToolbar__element material-symbols-outlined"
         onClick={handleNoteTogglePinAction}
       >
+        archive
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteDeleteAction}
+      >
         palette
       </div>
       <div
@@ -49,12 +55,6 @@ export const NoteToolbar = ({ id, visibility }) => {
         onClick={handleNoteDeleteAction}
       >
         add_photo_alternate
-      </div>
-      <div
-        className="noteToolbar__element material-symbols-outlined"
-        onClick={handleNoteDeleteAction}
-      >
-        archive
       </div>
       <div
         className="noteToolbar__element material-symbols-outlined"
