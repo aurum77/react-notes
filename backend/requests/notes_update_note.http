@@ -1,0 +1,11 @@
+PATCH http://localhost:3001/api/notes/63273dd24c07ebe2eff750b3
+Content-Type: application/json
+
+{
+  "title": "patched using rest.nvim",
+  "content": "hello express server",
+  "color": "note--turquoise",
+  "pinned": true,
+  "trashed": false,
+  "archived": false
+}
