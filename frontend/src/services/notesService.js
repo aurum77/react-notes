@@ -17,8 +17,8 @@ const deleteNote = (noteId) => {
   return request.then((response) => response.data);
 };
 
-const patchNote = (note, noteId) => {
-  const request = axios.delete(`${BASE_URL}/api/notes/${noteId}`);
+const patchNote = (note) => {
+  const request = axios.patch(`${BASE_URL}/api/notes/${note.id}`, note);
   return request.then((response) => response.data);
 };
 
