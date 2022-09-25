@@ -12,8 +12,9 @@ export const NoteToolbar = ({ id, visibility }) => {
   };
 
   const handleNoteDeleteAction = () => {
-    notesService.deleteNote(id).then((notes) => {
-      setNotes(notes);
+    const filtered = notes.filter(note => note.id !== id)
+    notesService.deleteNote(id).then(() => {
+      setNotes(filtered);
     });
   };
 
