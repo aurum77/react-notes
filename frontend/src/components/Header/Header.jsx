@@ -10,7 +10,9 @@ export const Header = () => {
   };
 
   const handleTrashIconClick = () => {
-    navigate("/404");
+    navigate("/trashed");
+  };
+
   };
 
   return (
