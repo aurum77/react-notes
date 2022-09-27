@@ -17,6 +17,10 @@ export const NoteInput = () => {
     setNoteTitle,
     noteColor,
     setNoteColor,
+    notePinned,
+    setNotePinned,
+    noteArchived,
+    setNoteArchived,
   } = useContext(NoteInputContext);
 
   const handleInputContentChange = (event) => {
@@ -34,9 +38,10 @@ export const NoteInput = () => {
         title: noteTitle,
         content: noteContent,
         color: noteColor,
-        pinned: false,
+        pinned: notePinned,
         trashed: false,
-        archived: false,
+        archived: noteArchived,
+        tags: [],
       };
 
       notesService
@@ -46,6 +51,8 @@ export const NoteInput = () => {
       setNoteContent("");
       setNoteTitle("");
       setNoteColor("");
+      setNotePinned(false);
+      setNoteArchived(false);
     }
   };
 

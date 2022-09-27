@@ -31,3 +31,6 @@
   cursor: pointer;
 }
 
+.noteInputToolbar__element--filled {
+  font-variation-settings: "FILL" 1;
+}
