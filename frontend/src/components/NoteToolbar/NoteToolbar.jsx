@@ -11,11 +11,19 @@ export const NoteToolbar = ({ id, visibility }) => {
     return filteredNote.pinned;
   };
 
-  const handleNoteDeleteAction = () => {
-    const filtered = notes.filter(note => note.id !== id)
-    notesService.deleteNote(id).then(() => {
-      setNotes(filtered);
-    });
+  const handleNoteToggleTrashed = () => {
+    const filteredNote = notes.filter((note) => note.id === id)[0];
+    filteredNote.trashed = !filteredNote.trashed;
+
+    if(filteredNote.archived) {
+      filteredNote.archived = !filteredNote.archived
+    }
+
+    const newNotes = notes.filter((note) => note.id !== id);
+
+    notesService.patchNote(filteredNote).then();
+
+    setNotes([...newNotes, filteredNote]);
   };
 
   const handleNoteTogglePinned = () => {
