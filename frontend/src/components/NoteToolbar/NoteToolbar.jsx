@@ -18,9 +18,24 @@ export const NoteToolbar = ({ id, visibility }) => {
     });
   };
 
-  const handleNoteTogglePinAction = () => {
+  const handleNoteTogglePinned = () => {
     const filteredNote = notes.filter((note) => note.id === id)[0];
     filteredNote.pinned = !filteredNote.pinned;
+
+    if(filteredNote.archived) {
+      filteredNote.archived = !filteredNote.archived
+    }
+
+    const newNotes = notes.filter((note) => note.id !== id);
+
+    notesService.patchNote(filteredNote).then();
+
+    setNotes([...newNotes, filteredNote]);
+  };
+
+  const handleNoteToggleArchived = () => {
+    const filteredNote = notes.filter((note) => note.id === id)[0];
+    filteredNote.archived = !filteredNote.archived;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
@@ -35,33 +50,33 @@ export const NoteToolbar = ({ id, visibility }) => {
         className={`noteToolbar__element material-symbols-outlined ${
           isPinned(id) ? "noteToolbar__element--filled" : ""
         }`}
-        onClick={handleNoteTogglePinAction}
+        onClick={handleNoteTogglePinned}
       >
         push_pin
       </div>
       <div
         className="noteToolbar__element material-symbols-outlined"
-        onClick={handleNoteTogglePinAction}
+        onClick={handleNoteToggleArchived}
       >
         archive
       </div>
       <div
         className="noteToolbar__element material-symbols-outlined"
-        onClick={handleNoteDeleteAction}
+        onClick={handleNoteToggleTrashed}
+      >
+        delete
+      </div>
+      <div
+        className="noteToolbar__element material-symbols-outlined"
+        onClick={handleNoteToggleTrashed}
       >
         palette
       </div>
       <div
         className="noteToolbar__element material-symbols-outlined"
-        onClick={handleNoteDeleteAction}
+        onClick={handleNoteToggleTrashed}
       >
         add_photo_alternate
-      </div>
-      <div
-        className="noteToolbar__element material-symbols-outlined"
-        onClick={handleNoteDeleteAction}
-      >
-        more_vert
       </div>
     </div>
   );
