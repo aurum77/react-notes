@@ -1,9 +1,10 @@
 import "./Header.css";
 import { HeaderSearch } from "../HeaderSearch";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleArchiveIconClick = () => {
     navigate("/archived");
@@ -13,6 +14,15 @@ export const Header = () => {
     navigate("/trashed");
   };
 
+  const headerText = () => {
+    switch (location.pathname) {
+      default:
+        return "react-notes";
+      case "/archived":
+        return "Archived";
+      case "/trashed":
+        return "Recycle bin";
+    }
   };
 
   return (
@@ -26,7 +36,7 @@ export const Header = () => {
         alt="Header branding image"
       />
       <Link to="/" style={{ textDecoration: "none" }}>
-        <div className="header__text">react-notes</div>
+        <div className="header__text">{headerText()}</div>
       </Link>
       <div className="header__item--fill">
         <HeaderSearch />
