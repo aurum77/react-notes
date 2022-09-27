@@ -4,10 +4,14 @@ import NotesContext from "../contexts/NotesContext";
 
 export const IndexPage = () => {
   const { notes, loading } = useContext(NotesContext);
-  const notPinnedNotes = notes.filter(
-    (note) => note.pinned !== true
+
+  const pinnedNotes = notes.filter(
+    (note) => note.pinned === true && note.archived === false && note.trashed === false
   );
-  const pinnedNotes = notes.filter((note) => note.pinned === true);
+
+  const notPinnedNotes = notes.filter(
+    (note) => note.pinned === false && note.archived === false && note.trashed === false
+  );
 
   return (
     <div>
