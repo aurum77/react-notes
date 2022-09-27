@@ -15,9 +15,8 @@ export const NoteToolbar = ({ id, visibility }) => {
     const filteredNote = notes.filter((note) => note.id === id)[0];
     filteredNote.trashed = !filteredNote.trashed;
 
-    if(filteredNote.archived) {
-      filteredNote.archived = !filteredNote.archived
-    }
+    filteredNote.archived = false
+    filteredNote.pinned = false
 
     const newNotes = notes.filter((note) => note.id !== id);
 
@@ -30,9 +29,7 @@ export const NoteToolbar = ({ id, visibility }) => {
     const filteredNote = notes.filter((note) => note.id === id)[0];
     filteredNote.pinned = !filteredNote.pinned;
 
-    if(filteredNote.archived) {
-      filteredNote.archived = !filteredNote.archived
-    }
+    filteredNote.archived = false;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
@@ -44,6 +41,8 @@ export const NoteToolbar = ({ id, visibility }) => {
   const handleNoteToggleArchived = () => {
     const filteredNote = notes.filter((note) => note.id === id)[0];
     filteredNote.archived = !filteredNote.archived;
+
+    filteredNote.pinned = false;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
