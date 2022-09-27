@@ -6,7 +6,7 @@ export const Header = () => {
   const navigate = useNavigate();
 
   const handleArchiveIconClick = () => {
-    navigate("/404");
+    navigate("/archived");
   };
 
   const handleTrashIconClick = () => {
