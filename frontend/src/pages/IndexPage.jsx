@@ -16,7 +16,7 @@ export const IndexPage = () => {
         <Loading />
       ) : (
         <div>
-          <div className="notes__header">PINNED</div>
+        {pinnedNotes.length !== 0 && <div className="notes__header">PINNED</div>} 
           <Notes>
             {pinnedNotes.map((note) => (
               <Note key={note.id} note={note} />
