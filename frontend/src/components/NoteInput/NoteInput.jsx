@@ -34,7 +34,7 @@ export const NoteInput = () => {
   const addNote = (event) => {
     event.preventDefault();
     if (noteTitle || noteContent) {
-      const newObject = {
+      const newNote = {
         title: noteTitle,
         content: noteContent,
         color: noteColor,
@@ -45,7 +45,7 @@ export const NoteInput = () => {
       };
 
       notesService
-        .createNote(newObject)
+        .createNote(newNote)
         .then((newNote) => setNotes(notes.concat(newNote)));
 
       setNoteContent("");
