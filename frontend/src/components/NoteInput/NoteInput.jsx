@@ -1,5 +1,5 @@
 import "./NoteInput.css";
-import { useState, useContext } from "react";
+import { useContext, useRef } from "react";
 import { NoteInputToolbar } from "../NoteInputToolbar";
 import NotesContext from "../../contexts/NotesContext";
 import NoteInputContext from "../../contexts/NoteInputContext";
@@ -8,11 +8,10 @@ import notesService from "../../services/notesService";
 export const NoteInput = () => {
   const { notes, setNotes } = useContext(NotesContext);
 
+  const noteTitleRef = useRef();
+  const noteContentRef = useRef();
+
   const {
-    noteContent,
-    setNoteContent,
-    noteTitle,
-    setNoteTitle,
     noteColor,
     setNoteColor,
     notePinned,
@@ -21,20 +20,12 @@ export const NoteInput = () => {
     setNoteArchived,
   } = useContext(NoteInputContext);
 
-  const handleInputContentChange = (event) => {
-    setNoteContent(event.target.value);
-  };
-
-  const handleInputTitleChange = (event) => {
-    setNoteTitle(event.target.value);
-  };
-
   const addNote = (event) => {
     event.preventDefault();
-    if (noteTitle || noteContent) {
+    if (noteTitleRef.current.value || noteContentRef.current.value) {
       const newNote = {
-        title: noteTitle,
-        content: noteContent,
+        title: noteTitleRef.current.value,
+        content: noteContentRef.current.value,
         color: noteColor,
         pinned: notePinned,
         trashed: false,
@@ -46,8 +37,8 @@ export const NoteInput = () => {
         .createNote(newNote)
         .then((newNote) => setNotes(notes.concat(newNote)));
 
-      setNoteContent("");
-      setNoteTitle("");
+      noteTitleRef.current.value = ""
+      noteContentRef.current.value = ""
       setNoteColor("");
       setNotePinned(false);
       setNoteArchived(false);
@@ -62,15 +53,13 @@ export const NoteInput = () => {
             className="noteInput__title"
             type="text"
             placeholder="Title"
-            value={noteTitle}
-            onChange={handleInputTitleChange}
+            ref={noteTitleRef}
           />
           <input
             className="noteInput__content"
             type="text"
             placeholder="Take a note..."
-            value={noteContent}
-            onChange={handleInputContentChange}
+            ref={noteContentRef}
           />
           <NoteInputToolbar />
         </div>
