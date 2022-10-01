@@ -6,8 +6,6 @@ import NoteInputContext from "../../contexts/NoteInputContext";
 import notesService from "../../services/notesService";
 
 export const NoteInput = () => {
-  const [hidden, sethidden] = useState("");
-
   const { notes, setNotes } = useContext(NotesContext);
 
   const {
@@ -61,7 +59,7 @@ export const NoteInput = () => {
       <div className="noteInput">
         <div className={`noteInput__box ${noteColor}`}>
           <input
-            className={`noteInput__title ${hidden}`}
+            className="noteInput__title"
             type="text"
             placeholder="Title"
             value={noteTitle}
