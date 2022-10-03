@@ -44,7 +44,7 @@ export const IndexPage = () => {
           )}
           {pinnedNotes.length === 0 && notPinnedNotes.length === 0 && (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
-              You do not have any trashed notes
+              You do not have any notes
             </div>
           )}
         </>
