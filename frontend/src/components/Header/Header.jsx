@@ -56,6 +56,7 @@ export const Header = () => {
       <div className="header__item--rightmost">
         <img
           className="header__usericon"
+          alt="user icon"
           src="https://external-preview.redd.it/liW4TFEad0ZONXF01u6gX8PLr9lvJT-qTK6OaW25cG4.jpg?auto=webp&s=461f514f48cd84227a7cb287a51a2648469dc9a1"
         />
       </div>
