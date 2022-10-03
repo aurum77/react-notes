@@ -12,17 +12,19 @@ export const ArchivedPage = () => {
         <Loading />
       ) : (
         <div>
-          <div className="notes__header">ARCHIVED</div>
           {archivedNotes.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               You do not have any archived notes
             </div>
           ) : (
-            <Notes>
-              {archivedNotes.map((note) => (
-                <Note key={note.id} note={note} />
-              ))}
-            </Notes>
+            <>
+              <div className="notes__header">ARCHIVED</div>
+              <Notes>
+                {archivedNotes.map((note) => (
+                  <Note key={note.id} note={note} />
+                ))}
+              </Notes>
+            </>
           )}
         </div>
       )}

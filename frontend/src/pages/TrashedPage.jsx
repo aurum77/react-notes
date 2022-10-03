@@ -14,17 +14,19 @@ export const TrashedPage = () => {
         <Loading />
       ) : (
         <div>
-          <div className="notes__header">TRASHED</div>
           {trashedNotes.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               You do not have any trashed notes
             </div>
           ) : (
-            <Notes>
-              {trashedNotes.map((note) => (
-                <Note key={note.id} note={note} />
-              ))}
-            </Notes>
+            <>
+              <div className="notes__header">TRASHED</div>
+              <Notes>
+                {trashedNotes.map((note) => (
+                  <Note key={note.id} note={note} />
+                ))}
+              </Notes>
+            </>
           )}
         </div>
       )}
