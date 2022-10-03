@@ -27,6 +27,11 @@ export const IndexPage = () => {
             ))}
           </Notes>
           <div className="notes__header">NOTES</div>
+        {notPinnedNotes.length === 0 ? (
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
+              You do not have any notes
+            </div>
+        ) :
           <Notes>
             {notPinnedNotes.map((note) => (
               <Note key={note.id} note={note} />
