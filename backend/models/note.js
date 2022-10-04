@@ -21,7 +21,8 @@ const noteSchema = new mongoose.Schema({
   created: Date,
   edited: Date,
   tags: [String],
-});
+},
+  {collection: "notes"});
 
 noteSchema.set("toJSON", {
   transform: (document, returnedObject) => {
