@@ -30,6 +30,7 @@ export const NoteToolbar = ({ id, visibility }) => {
     filteredNote.pinned = !filteredNote.pinned;
 
     filteredNote.archived = false;
+    filteredNote.trashed = false;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
@@ -43,6 +44,7 @@ export const NoteToolbar = ({ id, visibility }) => {
     filteredNote.archived = !filteredNote.archived;
 
     filteredNote.pinned = false;
+    filteredNote.trashed = false;
 
     const newNotes = notes.filter((note) => note.id !== id);
 
