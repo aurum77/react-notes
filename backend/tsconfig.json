@@ -10,6 +10,6 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "outDir": "build",
-    "allowJs": true
+    "allowJs": false
   }
 }
