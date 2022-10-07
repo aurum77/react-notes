@@ -1,13 +1,8 @@
 import { NextFunction, Request, Response } from "express";
+import { Types } from "mongoose";
 import Note from "../models/note";
 
-type ControllerParams = {
-  req: Request;
-  res: Response;
-  next: NextFunction;
-};
-
-export const notes_get_all = ({ req, res, next }: ControllerParams) => {
+export const notes_get_all = (req: Request, res: Response, next: NextFunction) => {
   Note.find({})
     .then((notes) => {
       res.json(notes);
@@ -15,10 +10,11 @@ export const notes_get_all = ({ req, res, next }: ControllerParams) => {
     .catch((error) => next(error));
 };
 
-export const notes_create_note = ({ req, res, next }: ControllerParams) => {
+export const notes_create_note = (req: Request, res: Response, next: NextFunction) => {
   const props = req.body;
 
   const newNote = new Note({
+    _id: new Types.ObjectId(),
     title: props.title,
     color: props.color,
     content: props.content,
@@ -34,7 +30,7 @@ export const notes_create_note = ({ req, res, next }: ControllerParams) => {
   return res.status(201).json(newNote);
 };
 
-export const notes_delete_note = ({ req, res, next }: ControllerParams) => {
+export const notes_delete_note = (req: Request, res: Response, next: NextFunction) => {
   Note.findByIdAndRemove(req.params.id)
     .then(() => {
       res.status(204).end();
@@ -42,7 +38,7 @@ export const notes_delete_note = ({ req, res, next }: ControllerParams) => {
     .catch((error) => next(error));
 };
 
-export const notes_update_note = ({ req, res, next }: ControllerParams) => {
+export const notes_update_note = (req: Request, res: Response, next: NextFunction) => {
   Note.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       res.status(200).end();
