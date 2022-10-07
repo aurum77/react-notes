@@ -31,6 +31,10 @@ export const notes_create_note = (req: Request, res: Response, next: NextFunctio
 };
 
 export const notes_delete_note = (req: Request, res: Response, next: NextFunction) => {
+  if(!Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).end();
+  }
+
   Note.findByIdAndRemove(req.params.id)
     .then(() => {
       res.status(204).end();
