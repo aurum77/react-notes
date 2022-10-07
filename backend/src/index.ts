@@ -12,8 +12,8 @@ const port = 3001;
 app.use(json);
 app.use(cors());
 
-morgan.token("json", (request: Request) => {
-  return JSON.stringify(request.body);
+morgan.token("json", (req: Request) => {
+  return JSON.stringify(req.body);
 });
 
 app.use(
