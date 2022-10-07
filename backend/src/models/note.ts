@@ -1,9 +1,9 @@
-import { connect, Schema, model } from "mongoose";
+import { connect, model, Schema, Types } from "mongoose";
 
 const url = process.env.MONGODB_URI;
 
 interface INote {
-  id: string,
+  _id: Types.ObjectId,
   title: string,
   content: string,
   color: string,
@@ -24,7 +24,7 @@ connect(url)
   });
 
 const noteSchema = new Schema<INote>({
-  id: String,
+  _id: Types.ObjectId,
   title: String,
   content: String,
   color: String,
@@ -36,13 +36,5 @@ const noteSchema = new Schema<INote>({
   tags: [String],
 },
   {collection: "notes"});
-
-noteSchema.set("toJSON", {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString();
-    delete returnedObject._id;
-    delete returnedObject.__v;
-  },
-});
 
 export default model("Note", noteSchema);
