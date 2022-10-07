@@ -1,6 +1,13 @@
-const Note = require("../models/note");
+import { NextFunction, Request, Response } from "express";
+import Note from "../models/note";
 
-const notes_get_all = (req, res, next) => {
+type ControllerParams = {
+  req: Request;
+  res: Response;
+  next: NextFunction;
+};
+
+export const notes_get_all = ({ req, res, next }: ControllerParams) => {
   Note.find({})
     .then((notes) => {
       res.json(notes);
@@ -8,7 +15,7 @@ const notes_get_all = (req, res, next) => {
     .catch((error) => next(error));
 };
 
-const notes_create_note = (req, res, next) => {
+export const notes_create_note = ({ req, res, next }: ControllerParams) => {
   const props = req.body;
 
   const newNote = new Note({
@@ -27,7 +34,7 @@ const notes_create_note = (req, res, next) => {
   return res.status(201).json(newNote);
 };
 
-const notes_delete_note = (req, res, next) => {
+export const notes_delete_note = ({ req, res, next }: ControllerParams) => {
   Note.findByIdAndRemove(req.params.id)
     .then(() => {
       res.status(204).end();
@@ -35,17 +42,10 @@ const notes_delete_note = (req, res, next) => {
     .catch((error) => next(error));
 };
 
-const notes_update_note = (req, res, next) => {
+export const notes_update_note = ({ req, res, next }: ControllerParams) => {
   Note.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       res.status(200).end();
     })
     .catch((error) => next(error));
-};
-
-module.exports = {
-  notes_get_all,
-  notes_create_note,
-  notes_delete_note,
-  notes_update_note,
 };
