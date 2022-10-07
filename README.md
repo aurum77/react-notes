@@ -12,7 +12,7 @@
 ## TODO
 
 - [ ] Migrate to Typescript
-  - [ ] Backend (About 90% done)
+  - [x] Backend
   - [ ] Frontend
 - [ ] Create a dockerfile
 - [ ] Tests
