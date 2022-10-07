@@ -37,4 +37,12 @@ const noteSchema = new Schema<INote>({
 },
   {collection: "notes"});
 
+noteSchema.set("toJSON", {
+  transform(doc, ret, options) {
+      ret.id = ret._id.toString();
+      delete ret._id;
+      delete ret.__v;
+  },
+})
+
 export default model("Note", noteSchema);
