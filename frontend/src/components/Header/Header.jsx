@@ -14,6 +14,10 @@ export const Header = () => {
     navigate("/trashed");
   };
 
+  const handleHomeIconClick = () => {
+    navigate("/");
+  }
+
   const headerText = () => {
     switch (location.pathname) {
       default:
@@ -40,6 +44,12 @@ export const Header = () => {
       </Link>
       <div className="header__item--fill">
         <HeaderSearch />
+      </div>
+      <div
+        className="header__item material-symbols-outlined"
+        onClick={handleHomeIconClick}
+      >
+        home
       </div>
       <div
         className="header__item material-symbols-outlined"
