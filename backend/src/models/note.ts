@@ -1,16 +1,29 @@
-const mongoose = require("mongoose");
+import { connect, Schema, model } from "mongoose";
+
 const url = process.env.MONGODB_URI;
 
-mongoose
-  .connect(url)
-  .then((result) => {
-    console.log("connected to MongoDB");
+interface INote {
+  id: string,
+  title: string,
+  content: string,
+  color: string,
+  pinned: boolean,
+  trashed: boolean,
+  archived: boolean,
+  created: string,
+  edited: string,
+  tags: string[],
+}
+
+connect(url)
+  .then(() => {
+    console.log("Connected to MongoDB");
   })
   .catch((err) => {
-    console.log(`error connecting to MongoDB: ${err.message}`);
+    console.log(`Error connecting to MongoDB: ${err.message}`);
   });
 
-const noteSchema = new mongoose.Schema({
+const noteSchema = new Schema<INote>({
   id: String,
   title: String,
   content: String,
@@ -32,4 +45,4 @@ noteSchema.set("toJSON", {
   },
 });
 
-module.exports = mongoose.model("Note", noteSchema);
+export default model("Note", noteSchema);
