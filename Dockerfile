@@ -8,8 +8,6 @@ RUN npm install backend/ --prefix backend/
 RUN npm install frontend/ --prefix frontend/
 RUN npm run build
 
-RUN npm install --omit=dev --prefix frontend/
-
 # Serve
 FROM node:16-alpine AS serve
 
