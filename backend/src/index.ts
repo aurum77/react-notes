@@ -5,12 +5,12 @@ import morgan from "morgan";
 import noteRoutes from "./routes/note";
 
 const app: Application = express();
-const json = express.json();
 
 const port = 3001;
 
-app.use(json);
+app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'));
 
 morgan.token("json", (req: Request) => {
   return JSON.stringify(req.body);
