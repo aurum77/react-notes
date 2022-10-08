@@ -4,6 +4,10 @@
 
 - It's a Google Keep clone written using MongoDB, Express, React and Node
 
+## What does it look like ?
+
+[Here's a railway app](https://react-notes-production.up.railway.app/) (If it's offline, blame railway.app for non-sleeping apps)
+
 ## How do I run this ?
 
 1. Populate file `backend/.env` with `MONGODB_URI`
