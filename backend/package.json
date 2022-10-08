@@ -15,7 +15,8 @@
   },
   "scripts": {
     "start": "tsc && node build/index.js",
-    "dev": "concurrently \"tsc --watch\" \"nodemon build/index.js\""
+    "dev": "concurrently \"tsc --watch\" \"nodemon build/index.js\"",
+    "build": "npx tsc"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
