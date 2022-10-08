@@ -1,5 +1,7 @@
 import { connect, model, Schema, Types } from "mongoose";
 
+require("dotenv").config()
+
 const url = process.env.MONGODB_URI;
 
 interface INote {
