@@ -1,24 +1,22 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001";
-
 const getAll = () => {
-  const request = axios.get(`${BASE_URL}/api/notes`);
+  const request = axios.get("/api/notes");
   return request.then((response) => response.data);
 };
 
 const createNote = (note) => {
-  const request = axios.post(`${BASE_URL}/api/notes`, note);
+  const request = axios.post("/api/notes", note);
   return request.then((response) => response.data);
 };
 
 const deleteNote = (noteId) => {
-  const request = axios.delete(`${BASE_URL}/api/notes/${noteId}`);
+  const request = axios.delete(`/api/notes/${noteId}`);
   return request.then((response) => response.data);
 };
 
 const patchNote = (note) => {
-  const request = axios.patch(`${BASE_URL}/api/notes/${note.id}`, note);
+  const request = axios.patch(`/api/notes/${note.id}`, note);
   return request.then((response) => response.data);
 };
 
