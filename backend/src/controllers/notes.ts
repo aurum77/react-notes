@@ -9,7 +9,7 @@ export const notes_get_all = (
 ) => {
   Note.find({})
     .then((notes) => {
-      res.json(notes);
+      return res.status(200).json(notes).end;
     })
     .catch((error) => next(error));
 };
