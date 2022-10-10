@@ -36,4 +36,10 @@ describe("Header", () => {
     const headerSearchInput = screen.getByPlaceholderText(/search for notes/i);
     expect(headerSearchInput).toBeInTheDocument;
   });
+
+  it("should show user icon", () => {
+    renderHeader();
+    const userIcon = screen.getByAltText("user icon");
+    expect(userIcon).toBeInTheDocument;
+  })
 });
