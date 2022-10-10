@@ -44,8 +44,14 @@ export const notes_delete_note = (
   next: NextFunction
 ) => {
   if (!Types.ObjectId.isValid(req.params.id)) {
-    return res.status(400).end();
+    return res.status(400).json({ error: "Invalid note id" });
   }
+
+  Note.exists({ _id: req.params.id }).then((exists) => {
+    if (!exists) {
+      return res.status(404).json({ error: "Note not found" });
+    }
+  });
 
   Note.findByIdAndRemove(req.params.id)
     .then(() => {
@@ -59,6 +65,16 @@ export const notes_update_note = (
   res: Response,
   next: NextFunction
 ) => {
+  if (!Types.ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ error: "Invalid note id" });
+  }
+
+  Note.exists({ _id: req.params.id }).then((exists) => {
+    if (!exists) {
+      return res.status(404).json({ error: "Note not found" });
+    }
+  });
+
   Note.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
       res.status(200).end();
