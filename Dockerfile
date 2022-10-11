@@ -19,7 +19,7 @@ COPY --from=build /build/backend/package*.json /app/
 COPY --from=build /build/backend/build /app/build
 
 # Copy Static content
-COPY --from=build /build/backend/dist /app/dist
+COPY --from=build /build/frontend/dist /app/dist
 
 # Install npm deps without dev deps
 RUN npm install --omit=dev
