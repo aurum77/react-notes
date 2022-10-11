@@ -14,19 +14,19 @@ const App = () => {
           <Router>
             <NotesProvider>
               <SearchProvider>
+                <Header />
                 <NoteInputProvider>
-                  <Header />
                   <Routes>
                     <Route path="*" element={<NotFoundPage />} />
                     <Route path="/" element={<IndexPage />} />
                     <Route path="/archived" element={<ArchivedPage />} />
                     <Route path="/trashed" element={<TrashedPage />} />
                   </Routes>
-                  <Footer />
                 </NoteInputProvider>
               </SearchProvider>
             </NotesProvider>
           </Router>
+          <Footer />
         </div>
       </div>
     </div>
