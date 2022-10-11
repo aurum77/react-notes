@@ -55,6 +55,15 @@ export const NoteToolbar = ({ id, visibility }) => {
     setNotes([...newNotes, filteredNote]);
   };
 
+  const handleNoteDelete = () => {
+    const filteredNote = notes.filter((note) => note.id === id)[0];
+    const newNotes = notes.filter((note) => note.id !== id);
+
+    notesService.deleteNote(filteredNote.id);
+
+    setNotes(newNotes);
+  };
+
   switch (location.pathname) {
     default:
       return (
@@ -113,7 +122,7 @@ export const NoteToolbar = ({ id, visibility }) => {
           </div>
           <div
             className="noteToolbar__element material-symbols-outlined"
-            onClick={handleNoteToggleTrashed}
+            onClick={handleNoteDelete}
           >
             delete_forever
           </div>
