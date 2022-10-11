@@ -2,6 +2,7 @@ require("dotenv").config();
 import express, { Request, Application } from "express";
 import cors from "cors";
 import morgan from "morgan";
+import path from "path";
 import noteRoutes from "./routes/note";
 
 const app: Application = express();
@@ -22,6 +23,15 @@ app.use(
 
 // Put middleware before this line
 app.use("/api", noteRoutes);
+
+// Make express play nice with client side routing
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, '../dist/index.html'), function(err: Error) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
 
 app.listen(port, () => {
   console.log(`Express app running on port ${port}`);
