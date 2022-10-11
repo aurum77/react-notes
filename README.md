@@ -10,8 +10,16 @@
 
 ## How do I run this ?
 
-1. Populate file `backend/.env` with `MONGODB_URI`
-2. Run `npm run dev` or `yarn dev` at the folder `react-notes`
+1. Install npm modules
+
+```bash
+npm install
+npm install backend/ --prefix backend/
+npm install frontend/ --prefix frontend/
+```
+
+2. Populate file `backend/.env` with `MONGODB_URI` or set `MONGODB_URI` environment variable
+3. Run `npm run dev` or `yarn dev` at the root folder
 
 ## How do I deploy this ?
 
