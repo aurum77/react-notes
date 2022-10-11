@@ -28,3 +28,4 @@
 - [ ] Set up CI/CD
 - [ ] Set up ESLint
 - [ ] JWT based authentication
+- [ ] Responsive design
