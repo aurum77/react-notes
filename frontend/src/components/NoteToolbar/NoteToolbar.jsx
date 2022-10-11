@@ -115,13 +115,13 @@ export const NoteToolbar = ({ id, visibility }) => {
           }`}
         >
           <div
-            className="noteToolbar__element material-symbols-outlined"
+            className="noteToolbar__element noteToolbar__element--filled material-symbols-outlined"
             onClick={handleNoteToggleTrashed}
           >
             restore_from_trash
           </div>
           <div
-            className="noteToolbar__element material-symbols-outlined"
+            className="noteToolbar__element noteToolbar__element--filled material-symbols-outlined"
             onClick={handleNoteDelete}
           >
             delete_forever
