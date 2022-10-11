@@ -1,0 +1,17 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "noFallthroughCasesInSwitch": true
+  }
+}
