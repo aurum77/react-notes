@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { render, RenderResult, screen } from "@testing-library/react";
 import { Header } from "./Header";
 import { BrowserRouter as Router } from "react-router-dom";
 import { SearchProvider } from "../../contexts/SearchContext";
 
-function renderHeader() {
+function renderHeader(): RenderResult {
   return render(
     <Router>
       <SearchProvider>
@@ -21,7 +21,7 @@ describe("Header", () => {
   });
   it("should show branding image", () => {
     renderHeader();
-    const headerImg = screen.getByAltText(/header branding image/i);
+    const headerImg = screen.getByAltText(/header branding/i);
     expect(headerImg).toBeInTheDocument;
   });
 
@@ -41,5 +41,5 @@ describe("Header", () => {
     renderHeader();
     const userIcon = screen.getByAltText("user icon");
     expect(userIcon).toBeInTheDocument;
-  })
+  });
 });

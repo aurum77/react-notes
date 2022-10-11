@@ -1,24 +1,31 @@
 import "./Header.css";
 import { HeaderSearch } from "../HeaderSearch";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useLocation,
+  NavigateFunction,
+  Location,
+} from "react-router-dom";
+import { FunctionComponent, MouseEventHandler, ReactElement } from "react";
 
-export const Header = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+export const Header: FunctionComponent = (): ReactElement => {
+  const navigate: NavigateFunction = useNavigate();
+  const location: Location = useLocation();
 
-  const handleArchiveIconClick = () => {
+  const handleArchiveIconClick: MouseEventHandler = (): void => {
     navigate("/archived");
   };
 
-  const handleTrashIconClick = () => {
+  const handleTrashIconClick: MouseEventHandler = (): void => {
     navigate("/trashed");
   };
 
-  const handleHomeIconClick = () => {
+  const handleHomeIconClick: MouseEventHandler = (): void => {
     navigate("/");
-  }
+  };
 
-  const headerText = () => {
+  const headerText: Function = (): string => {
     switch (location.pathname) {
       default:
         return "react-notes";
@@ -37,7 +44,7 @@ export const Header = () => {
       <img
         className="header__branding"
         src="./logo192.png"
-        alt="Header branding image"
+        alt="Header branding"
       />
       <Link to="/" style={{ textDecoration: "none" }}>
         <div className="header__text">{headerText()}</div>
