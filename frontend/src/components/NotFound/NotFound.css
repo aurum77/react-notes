@@ -10,3 +10,9 @@
   object-fit: contain;
   overflow-y: hidden;
 }
+
+.notFound__text {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-align: center;
+}
