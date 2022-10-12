@@ -1,9 +1,11 @@
-require("dotenv").config();
+import dotenv from "dotenv";
 import express, { Request, Application } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import path from "path";
 import noteRoutes from "./routes/note";
+
+dotenv.config();
 
 const app: Application = express();
 

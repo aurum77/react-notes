@@ -1,6 +1,7 @@
 import { connect, model, Schema, Types } from "mongoose";
+import dotenv from "dotenv";
 
-require("dotenv").config()
+dotenv.config();
 
 const url = process.env.MONGODB_URI;
 
