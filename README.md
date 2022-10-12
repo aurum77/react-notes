@@ -34,6 +34,6 @@ npm install frontend/ --prefix frontend/
 - [x] Create a dockerfile
 - [ ] Tests
 - [ ] Set up CI/CD
-- [ ] Set up ESLint
+- [x] Set up ESLint
 - [ ] JWT based authentication
 - [ ] Responsive design
