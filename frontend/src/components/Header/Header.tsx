@@ -25,7 +25,7 @@ export const Header: FunctionComponent = (): ReactElement => {
     navigate("/");
   };
 
-  const headerText: Function = (): string => {
+  const headerText = (): string => {
     switch (location.pathname) {
       default:
         return "react-notes";
