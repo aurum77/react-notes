@@ -7,9 +7,9 @@ import {
   NavigateFunction,
   Location,
 } from "react-router-dom";
-import { FunctionComponent, MouseEventHandler, ReactElement } from "react";
+import { MouseEventHandler } from "react";
 
-export const Header: FunctionComponent = (): ReactElement => {
+export const Header = (): JSX.Element => {
   const navigate: NavigateFunction = useNavigate();
   const location: Location = useLocation();
 
