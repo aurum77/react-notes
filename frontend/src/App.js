@@ -9,26 +9,22 @@ import { ArchivedPage } from "./pages/ArchivedPage";
 const App = () => {
   return (
     <div>
-      <div className="pagecontainer">
-        <div className="contentwrap">
-          <Router>
-            <NotesProvider>
-              <SearchProvider>
-                <Header />
-                <NoteInputProvider>
-                  <Routes>
-                    <Route path="*" element={<NotFoundPage />} />
-                    <Route path="/" element={<IndexPage />} />
-                    <Route path="/archived" element={<ArchivedPage />} />
-                    <Route path="/trashed" element={<TrashedPage />} />
-                  </Routes>
-                </NoteInputProvider>
-              </SearchProvider>
-            </NotesProvider>
-          </Router>
-          <Footer />
-        </div>
-      </div>
+      <Router>
+        <NotesProvider>
+          <SearchProvider>
+            <Header />
+            <NoteInputProvider>
+              <Routes>
+                <Route path="*" element={<NotFoundPage />} />
+                <Route path="/" element={<IndexPage />} />
+                <Route path="/archived" element={<ArchivedPage />} />
+                <Route path="/trashed" element={<TrashedPage />} />
+              </Routes>
+            </NoteInputProvider>
+          </SearchProvider>
+        </NotesProvider>
+      </Router>
+      <Footer />
     </div>
   );
 };
