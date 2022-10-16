@@ -1,7 +1,7 @@
 .note {
   display: flex;
   flex-direction: column;
-  border: 1px solid #E0E0E0;
+  border: 1px solid #e0e0e0;
   box-sizing: border-box;
   width: 240px;
   padding-top: 5px;
@@ -23,57 +23,63 @@
 }
 
 .note__content {
-  font-size: 1.0rem;
+  font-size: 1rem;
   padding-bottom: 15px;
   margin-bottom: auto;
   word-wrap: break-word;
 }
 
 .note__content--small {
-  font-size: .875rem;
+  font-size: 0.875rem;
   margin-bottom: auto;
   word-wrap: break-word;
 }
 
 .note--blue {
-  background-color: #CBF0F8;
+  background-color: #cbf0f8;
   border: transparent;
 }
 
 .note--darkblue {
-  background-color: #AECBFA;
+  background-color: #aecbfa;
   border: transparent;
 }
 
 .note--red {
-  background-color: #F28B82;
+  background-color: #f28b82;
   border: transparent;
 }
 .note--purple {
-  background-color: #D7AEFB;
+  background-color: #d7aefb;
   border: transparent;
 }
 
 .note--turquoise {
-  background-color: #A7FFEB;
+  background-color: #a7ffeb;
   border: transparent;
 }
 
 .note--green {
-  background-color: #CCFF90;
+  background-color: #ccff90;
   border: transparent;
 }
 
 .note--yellow {
-  background-color: #FFF475;
+  background-color: #fff475;
   border: transparent;
 }
 
 .note--orange {
-  background-color: #FBBC04;
+  background-color: #fbbc04;
   border: transparent;
 }
 
 .note--invisible {
   visibility: hidden;
+}
+
+@media only screen and (max-width: 615px) {
+  .note {
+    width: 100%;
+  }
 }
