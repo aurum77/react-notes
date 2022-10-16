@@ -34,11 +34,8 @@ export const Header = (): JSX.Element => {
 
   return (
     <div className="header">
-      <div className="header__item header__item--leftmost material-symbols-outlined">
-        menu
-      </div>
       <img
-        className="header__branding"
+        className="header__branding header__item header__item--leftmost"
         src="./logo192.png"
         alt="Header branding"
       />
