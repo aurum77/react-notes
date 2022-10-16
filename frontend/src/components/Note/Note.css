@@ -73,3 +73,7 @@
   background-color: #FBBC04;
   border: transparent;
 }
+
+.note--invisible {
+  visibility: hidden;
+}
