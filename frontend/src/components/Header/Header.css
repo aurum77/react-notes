@@ -56,3 +56,9 @@
   border-radius: 50%;
   width: 30px;
 }
+
+@media only screen and (max-width: 615px) {
+  .header__item--fill {
+    margin-left: 0px;
+  }
+}
