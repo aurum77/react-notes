@@ -49,13 +49,13 @@ export const NoteInput = () => {
     <form onSubmit={addNote}>
       <div className="noteInput">
         <div className={`noteInput__box ${noteColor}`}>
-          <input
+          <textarea
             className="noteInput__title"
             type="text"
             placeholder="Title"
             ref={noteTitleRef}
           />
-          <input
+          <textarea
             className="noteInput__content"
             type="text"
             placeholder="Take a note..."
