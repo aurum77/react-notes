@@ -33,6 +33,9 @@ export const HeaderSearch = () => {
           value={searchValue}
         />
       </div>
+      <div className="headerSearch__mobile material-symbols-outlined">
+        search
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 .headerSearch {
   display: flex;
+  align-items: center;
 }
 
 .headerSearch__icon {
@@ -12,7 +13,6 @@
   background-color: #20210944;
   border-radius: 50%;
 }
-
 
 .headerSearch__box {
   display: flex;
@@ -49,4 +49,23 @@
 
 .headerSearch__input:focus {
   outline: none;
+}
+
+.headerSearch__mobile {
+  display: none;
+  align-self: flex-end;
+  font-size: 1.4rem;
+  color: #555;
+  padding: 5px;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 615px) {
+  .headerSearch__box {
+    display: none;
+  }
+
+  .headerSearch__mobile {
+    display: inline;
+  }
 }
