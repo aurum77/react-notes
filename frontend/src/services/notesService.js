@@ -1,23 +1,27 @@
 import axios from "axios";
 
-const getAll = () => {
+const getAll = async () => {
   const request = axios.get("/api/notes");
-  return request.then((response) => response.data);
+  const response = await request;
+    return response.data;
 };
 
-const createNote = (note) => {
+const createNote = async (note) => {
   const request = axios.post("/api/notes", note);
-  return request.then((response) => response.data);
+  const response = await request;
+    return response.data;
 };
 
-const deleteNote = (noteId) => {
+const deleteNote = async (noteId) => {
   const request = axios.delete(`/api/notes/${noteId}`);
-  return request.then((response) => response.data);
+  const response = await request;
+    return response.data;
 };
 
-const patchNote = (note) => {
+const patchNote = async (note) => {
   const request = axios.patch(`/api/notes/${note.id}`, note);
-  return request.then((response) => response.data);
+  const response = await request;
+    return response.data;
 };
 
 export default { getAll, createNote, deleteNote, patchNote };
