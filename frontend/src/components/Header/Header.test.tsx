@@ -14,11 +14,6 @@ function renderHeader(): RenderResult {
 }
 
 describe("Header", () => {
-  it("should show hamburger menu icon", () => {
-    renderHeader();
-    const headerIcon = screen.getByText("menu");
-    expect(headerIcon).toBeInTheDocument;
-  });
   it("should show branding image", () => {
     renderHeader();
     const headerImg = screen.getByAltText(/header branding/i);

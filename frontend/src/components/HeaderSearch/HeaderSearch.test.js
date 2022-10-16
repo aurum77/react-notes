@@ -17,7 +17,7 @@ const renderHeaderSearch = () => {
 describe("HeaderSearch", () => {
   it("should have a search icon", () => {
     renderHeaderSearch();
-    const searchIcon = screen.getByText("search");
+    const searchIcon = screen.getAllByText("search");
     expect(searchIcon).toBeInTheDocument;
   });
 
