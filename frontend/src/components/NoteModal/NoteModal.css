@@ -1,0 +1,86 @@
+.noteModal {
+  position: fixed;
+  visibility: visible;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.noteModal__title {
+  background-color: transparent;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  word-wrap: break-word;
+  margin-top: 10px;
+  resize: none;
+}
+
+.noteModal__title:focus {
+  outline: none;
+}
+
+.noteModal__content {
+  background-color: transparent;
+  border: none;
+  font-size: 1.0rem;
+  word-wrap: break-word;
+  margin-top: 10px;
+  flex: 2;
+  resize: none;
+}
+
+.noteModal__content:focus {
+  outline: none;
+}
+
+.noteModal__wrapper {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 280px;
+  background-color: white;
+  border: 1px solid #E0E0E0;
+  box-sizing: border-box;
+  width: 600px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 180px;
+}
+
+.noteModal--hidden {
+  display: none;
+}
+
+.noteModal__button {
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 5px;
+  border: none;
+  height: 36px;
+  width: 72px;
+  outline: none;
+}
+
+.noteModal__button:hover{
+  border-radius: 10px;
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.noteModal__toolbar {
+  display: flex;
+  justify-content: space-between;
+}
