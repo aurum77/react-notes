@@ -1,9 +1,12 @@
 import "./Note.css";
 import { NoteToolbar } from "../NoteToolbar";
+import { NoteModal } from "../NoteModal";
 import { useState } from "react";
 
 export const Note = ({ note }) => {
   const [toolbarVisibility, setToolbarVisibility] = useState(false);
+  const [modalVisibility, setModalVisibility] = useState(false);
+
   const content =
     note.content.length > 400
       ? note.content.substr(0, 400) + "..."
@@ -16,15 +19,31 @@ export const Note = ({ note }) => {
     setToolbarVisibility(!toolbarVisibility);
   };
 
+  const handleModalVisibility = () => {
+    if (!modalVisibility) {
+      setModalVisibility(!modalVisibility);
+    }
+  };
+
   return (
     <div
-      className={`note ${note.color}`}
+      className={`note ${note.color} ${
+        modalVisibility ? "note--invisible" : ""
+      }`}
       onMouseEnter={handleToolbarVisibility}
       onMouseLeave={handleToolbarVisibility}
+      onClick={handleModalVisibility}
     >
       <div className="note__title">{title}</div>
       <div className={`note__content ${contentSize}`}>{content}</div>
-      <NoteToolbar id={note.id} visibility={toolbarVisibility} />
+      {!modalVisibility && (
+        <NoteToolbar id={note.id} visibility={toolbarVisibility} />
+      )}
+      <NoteModal
+        id={note.id}
+        visibility={modalVisibility}
+        setVisibility={setModalVisibility}
+      />
     </div>
   );
 };
