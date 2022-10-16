@@ -21,10 +21,6 @@ export const Header = (): JSX.Element => {
     navigate("/trashed");
   };
 
-  const handleHomeIconClick: MouseEventHandler = (): void => {
-    navigate("/");
-  };
-
   const headerText = (): string => {
     switch (location.pathname) {
       default:
@@ -51,12 +47,6 @@ export const Header = (): JSX.Element => {
       </Link>
       <div className="header__item--fill">
         <HeaderSearch />
-      </div>
-      <div
-        className="header__item material-symbols-outlined"
-        onClick={handleHomeIconClick}
-      >
-        home
       </div>
       <div
         className="header__item material-symbols-outlined"
