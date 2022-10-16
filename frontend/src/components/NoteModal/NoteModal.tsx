@@ -35,7 +35,9 @@ export const NoteModal = ({
       id: note.id,
     };
 
-    const newNotes = notes.map((note: Note) => note.id === newNote.id ? newNote : note)
+    const newNotes = notes.map((note: Note) =>
+      note.id === newNote.id ? newNote : note
+    );
 
     notesService.patchNote(newNote).then();
 
@@ -50,16 +52,14 @@ export const NoteModal = ({
           className="noteModal__title"
           placeholder="Title"
           ref={noteModalTitleRef}
-        >
-          {note.title}
-        </textarea>
+          defaultValue={note.title}
+        />
         <textarea
           className="noteModal__content"
           placeholder="Note"
           ref={noteModalContentRef}
-        >
-          {note.content}
-        </textarea>
+          defaultValue={note.content}
+        />
         <div className="noteModal__toolbar">
           <NoteToolbar id={note.id} visibility={true} />
           <button className="noteModal__button" onClick={handleModalSubmit}>
