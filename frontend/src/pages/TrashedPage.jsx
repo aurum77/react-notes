@@ -9,11 +9,11 @@ export const TrashedPage = () => {
   );
 
   return (
-    <div>
+    <>
       {loading ? (
         <Loading />
       ) : (
-        <div>
+        <>
           {trashedNotes.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               You do not have any trashed notes
@@ -28,8 +28,8 @@ export const TrashedPage = () => {
               </Notes>
             </>
           )}
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 };

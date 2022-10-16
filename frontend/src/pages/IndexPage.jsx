@@ -16,7 +16,7 @@ export const IndexPage = () => {
   );
 
   return (
-    <div>
+    <>
       <NoteInput />
       {loading ? (
         <Loading />
@@ -49,6 +49,6 @@ export const IndexPage = () => {
           )}
         </>
       )}
-    </div>
+    </>
   );
 };

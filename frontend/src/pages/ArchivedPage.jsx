@@ -7,11 +7,11 @@ export const ArchivedPage = () => {
   const archivedNotes = notes.filter((note) => note.archived === true);
 
   return (
-    <div>
+    <>
       {loading ? (
         <Loading />
       ) : (
-        <div>
+        <>
           {archivedNotes.length === 0 ? (
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               You do not have any archived notes
@@ -26,8 +26,8 @@ export const ArchivedPage = () => {
               </Notes>
             </>
           )}
-        </div>
+        </>
       )}
-    </div>
+    </>
   );
 };

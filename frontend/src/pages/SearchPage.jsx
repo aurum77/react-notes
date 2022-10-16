@@ -12,7 +12,7 @@ export const SearchPage = () => {
   );
 
   return (
-    <div>
+    <>
       {searchValue ? (
         <Notes>
           {filteredNotes.map((note) => (
@@ -22,6 +22,6 @@ export const SearchPage = () => {
       ) : (
         <div style={{ textAlign: "center" }}>Please input a search term</div>
       )}
-    </div>
+    </>
   );
 };
