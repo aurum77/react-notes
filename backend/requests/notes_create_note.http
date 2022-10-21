@@ -8,4 +8,6 @@ Content-Type: application/json
   "pinned": true,
   "trashed": false,
   "archived": false,
+  "created": "2022-10-21T13:14:43.184Z",
+  "edited": "2022-10-21T13:14:43.184Z"
 }

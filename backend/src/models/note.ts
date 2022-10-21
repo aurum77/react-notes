@@ -13,6 +13,8 @@ interface INote {
   pinned: boolean;
   trashed: boolean;
   archived: boolean;
+  created: Date;
+  edited: Date;
   tags: string[];
 }
 
@@ -33,9 +35,11 @@ const noteSchema = new Schema<INote>(
     pinned: Boolean,
     trashed: Boolean,
     archived: Boolean,
+    created: Date,
+    edited: Date,
     tags: [String],
   },
-  { collection: "notes", versionKey: false, timestamps: true }
+  { collection: "notes", versionKey: false }
 );
 
 noteSchema.set("toJSON", {
