@@ -37,8 +37,8 @@ export const NoteInput = () => {
         .createNote(newNote)
         .then((newNote) => setNotes(notes.concat(newNote)));
 
-      noteTitleRef.current.value = ""
-      noteContentRef.current.value = ""
+      noteTitleRef.current.value = "";
+      noteContentRef.current.value = "";
       setNoteColor("");
       setNotePinned(false);
       setNoteArchived(false);

@@ -1,11 +1,15 @@
 import "./NoteToolbar.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLocation } from "react-router-dom";
 import notesService from "../../services/notesService";
 import NotesContext from "../../contexts/NotesContext";
+import { ColorPicker } from "../Common/ColorPicker";
+import NoteModalContext from "../../contexts/NoteModalContext";
 
 export const NoteToolbar = ({ id, visibility }) => {
   const { notes, setNotes } = useContext(NotesContext);
+  const [colorPickerVisibility, setColorPickerVisibility] = useState(false);
+
   const location = useLocation();
 
   const isPinned = (id) => {
@@ -64,6 +68,10 @@ export const NoteToolbar = ({ id, visibility }) => {
     setNotes(newNotes);
   };
 
+  const handleColorPickerVisibility = () => {
+    setColorPickerVisibility((colorPickerVisibility) => !colorPickerVisibility);
+  };
+
   switch (location.pathname) {
     default:
       return (
@@ -94,7 +102,7 @@ export const NoteToolbar = ({ id, visibility }) => {
           </div>
           <div
             className="noteToolbar__element material-symbols-outlined"
-            onClick={handleNoteToggleTrashed}
+            onClick={handleColorPickerVisibility}
           >
             palette
           </div>
@@ -104,6 +112,10 @@ export const NoteToolbar = ({ id, visibility }) => {
           >
             add_photo_alternate
           </div>
+          <ColorPicker
+            context={NoteModalContext}
+            visibility={colorPickerVisibility}
+          />
         </div>
       );
 

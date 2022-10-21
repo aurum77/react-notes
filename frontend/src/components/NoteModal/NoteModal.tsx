@@ -1,8 +1,11 @@
+import "../Note/Note.css";
 import "./NoteModal.css";
 import { Dispatch, SetStateAction, useContext, useRef } from "react";
 import NotesContext from "../../contexts/NotesContext";
 import { NoteToolbar } from "../NoteToolbar";
 import notesService from "../../services/notesService";
+import { ColorPicker } from "../Common/ColorPicker";
+import NoteModalContext from "../../contexts/NoteModalContext";
 
 type NoteModalProps = {
   id: string;
@@ -16,38 +19,45 @@ export const NoteModal = ({
   setVisibility,
 }: NoteModalProps) => {
   const { notes, setNotes } = useContext(NotesContext);
+  const { noteColor } = useContext(NoteModalContext);
   const noteModalTitleRef = useRef<HTMLTextAreaElement>(null);
   const noteModalContentRef = useRef<HTMLTextAreaElement>(null);
 
   const note: Note = notes.filter((note: Note) => note.id === id)[0];
 
   const handleModalSubmit = () => {
-    const newNote: Note = {
-      title: noteModalTitleRef.current?.value as string,
-      content: noteModalContentRef.current?.value as string,
-      color: note.color,
-      pinned: note.pinned,
-      trashed: note.trashed,
-      archived: note.archived,
-      created: note.created,
-      edited: new Date(),
-      tags: note.tags,
-      id: note.id,
-    };
+    if (
+      (noteModalTitleRef.current?.value as string) !== note.title ||
+      (noteModalContentRef.current?.value as string) !== note.content ||
+      noteColor !== note.color
+    ) {
+      const newNote: Note = {
+        title: noteModalTitleRef.current?.value as string,
+        content: noteModalContentRef.current?.value as string,
+        color: noteColor,
+        pinned: note.pinned,
+        trashed: note.trashed,
+        archived: note.archived,
+        created: note.created,
+        edited: new Date(),
+        tags: note.tags,
+        id: note.id,
+      };
 
-    const newNotes = notes.map((note: Note) =>
-      note.id === newNote.id ? newNote : note
-    );
+      const newNotes = notes.map((note: Note) =>
+        note.id === newNote.id ? newNote : note
+      );
 
-    notesService.patchNote(newNote).then();
+      notesService.patchNote(newNote).then();
+      setNotes(newNotes);
+    }
 
-    setNotes(newNotes);
     setVisibility((visibility) => !visibility);
   };
 
   return (
     <div className={`noteModal ${visibility ? "" : "noteModal--hidden"}`}>
-      <div className="noteModal__wrapper">
+      <div className={`noteModal__wrapper ${noteColor}`}>
         <textarea
           className="noteModal__title"
           placeholder="Title"

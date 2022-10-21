@@ -5,6 +5,7 @@ import { NoteInputProvider } from "./contexts/NoteInputContext";
 import { NotesProvider } from "./contexts/NotesContext";
 import { SearchProvider } from "./contexts/SearchContext";
 import { ArchivedPage } from "./pages/ArchivedPage";
+import { NoteModalProvider } from "./contexts/NoteModalContext";
 
 const App = () => {
   return (
@@ -14,12 +15,14 @@ const App = () => {
           <SearchProvider>
             <Header />
             <NoteInputProvider>
-              <Routes>
-                <Route path="*" element={<NotFoundPage />} />
-                <Route path="/" element={<IndexPage />} />
-                <Route path="/archived" element={<ArchivedPage />} />
-                <Route path="/trashed" element={<TrashedPage />} />
-              </Routes>
+              <NoteModalProvider>
+                <Routes>
+                  <Route path="*" element={<NotFoundPage />} />
+                  <Route path="/" element={<IndexPage />} />
+                  <Route path="/archived" element={<ArchivedPage />} />
+                  <Route path="/trashed" element={<TrashedPage />} />
+                </Routes>
+              </NoteModalProvider>
             </NoteInputProvider>
           </SearchProvider>
         </NotesProvider>
