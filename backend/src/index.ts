@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import path from "path";
 import noteRoutes from "./routes/note";
+import customErrorHandler from "./middleware/customErrorHandler";
 
 dotenv.config();
 
@@ -23,8 +24,9 @@ app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :json")
 );
 
-// Put middleware before this line
 app.use("/api", noteRoutes);
+
+app.use(customErrorHandler);
 
 // Make express play nice with client side routing
 app.get("*", function (req, res) {
