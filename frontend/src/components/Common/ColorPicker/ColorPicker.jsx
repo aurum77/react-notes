@@ -1,16 +1,15 @@
 import "./ColorPicker.css";
 import { useContext } from "react";
-import NoteInputContext from "../../../contexts/NoteInputContext";
 
-export const ColorPicker = () => {
-  const { noteColor, setNoteColor } = useContext(NoteInputContext);
+export const ColorPicker = ({context, visibility}) => {
+  const { noteColor, setNoteColor } = useContext(context);
 
   const handleColorPick = (event) => {
     setNoteColor(event.target.getAttribute("color"));
   };
 
   return (
-    <>
+    <div className={`colorPicker ${visibility ? "" : "colorPicker--hidden"}`}>
       <span
         className={`colorPicker__dot material-symbols-outlined ${
           noteColor === "" ? "colorPicker__dot--selected" : ""
@@ -69,6 +68,6 @@ export const ColorPicker = () => {
         color="note--orange"
         onClick={handleColorPick}
       />
-    </>
+    </div>
   );
 };
