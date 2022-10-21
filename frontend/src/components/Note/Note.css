@@ -36,42 +36,42 @@
 }
 
 .note--blue {
-  background-color: #cbf0f8;
-  border: transparent;
+  background-color: #cbf0f8 !important;
+  border: transparent !important;
 }
 
 .note--darkblue {
-  background-color: #aecbfa;
-  border: transparent;
+  background-color: #aecbfa !important;
+  border: transparent !important;
 }
 
 .note--red {
-  background-color: #f28b82;
-  border: transparent;
+  background-color: #f28b82 !important;
+  border: transparent !important;
 }
 .note--purple {
-  background-color: #d7aefb;
-  border: transparent;
+  background-color: #d7aefb !important;
+  border: transparent !important;
 }
 
 .note--turquoise {
-  background-color: #a7ffeb;
-  border: transparent;
+  background-color: #a7ffeb !important;
+  border: transparent !important;
 }
 
 .note--green {
-  background-color: #ccff90;
-  border: transparent;
+  background-color: #ccff90 !important;
+  border: transparent !important;
 }
 
 .note--yellow {
-  background-color: #fff475;
-  border: transparent;
+  background-color: #fff475 !important;
+  border: transparent !important;
 }
 
 .note--orange {
-  background-color: #fbbc04;
-  border: transparent;
+  background-color: #fbbc04 !important;
+  border: transparent !important;
 }
 
 .note--invisible {
